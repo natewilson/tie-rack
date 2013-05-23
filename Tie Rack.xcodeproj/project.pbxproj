@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D02B4C9174E74EB009014FD /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5D02B4C8174E74EB009014FD /* readme.md */; };
 		CFC80383174C0FE0006B492F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80382174C0FE0006B492F /* UIKit.framework */; };
 		CFC80385174C0FE0006B492F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80384174C0FE0006B492F /* Foundation.framework */; };
 		CFC80387174C0FE0006B492F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80386174C0FE0006B492F /* CoreGraphics.framework */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D02B4C8174E74EB009014FD /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = SOURCE_ROOT; };
 		CFC8037F174C0FE0006B492F /* Tie Rack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tie Rack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC80382174C0FE0006B492F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CFC80384174C0FE0006B492F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,6 +80,7 @@
 		CFC80388174C0FE0006B492F /* Tie Rack */ = {
 			isa = PBXGroup;
 			children = (
+				5D02B4C8174E74EB009014FD /* readme.md */,
 				CFC80391174C0FE0006B492F /* TRAppDelegate.h */,
 				CFC80392174C0FE0006B492F /* TRAppDelegate.m */,
 				CFC80389174C0FE0006B492F /* Supporting Files */,
@@ -155,6 +158,7 @@
 				CFC80395174C0FE0006B492F /* Default.png in Resources */,
 				CFC80397174C0FE0006B492F /* Default@2x.png in Resources */,
 				CFC80399174C0FE0006B492F /* Default-568h@2x.png in Resources */,
+				5D02B4C9174E74EB009014FD /* readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +287,7 @@
 				CFC8039E174C0FE0006B492F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
