@@ -87,6 +87,9 @@
 		CFC80388174C0FE0006B492F /* Tie Rack */ = {
 			isa = PBXGroup;
 			children = (
+				F31CF3091755110400F9B324 /* TRViewController.h */,
+				F31CF30A1755110400F9B324 /* TRViewController.m */,
+				F31CF30B1755110400F9B324 /* TRViewController.xib */,
 				5D02B4C8174E74EB009014FD /* readme.md */,
 				CFC80391174C0FE0006B492F /* TRAppDelegate.h */,
 				CFC80392174C0FE0006B492F /* TRAppDelegate.m */,
@@ -102,9 +105,6 @@
 				CFC8038A174C0FE0006B492F /* Tie Rack-Info.plist */,
 				CFC8038B174C0FE0006B492F /* InfoPlist.strings */,
 				CFC8038E174C0FE0006B492F /* main.m */,
-				F31CF3091755110400F9B324 /* TRViewController.h */,
-				F31CF30A1755110400F9B324 /* TRViewController.m */,
-				F31CF30B1755110400F9B324 /* TRViewController.xib */,
 				CFC80390174C0FE0006B492F /* Tie Rack-Prefix.pch */,
 				CFC80394174C0FE0006B492F /* Default.png */,
 				CFC80396174C0FE0006B492F /* Default@2x.png */,
