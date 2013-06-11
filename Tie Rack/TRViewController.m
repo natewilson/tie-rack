@@ -54,6 +54,9 @@
                                                                   CGRectGetMidY(layerRect))];
 	[[[self view] layer] addSublayer:[self previewLayer]];
     
+    //start the capture session
+    [captureSession startRunning];
+    
 }
 
 - (void)didReceiveMemoryWarning
