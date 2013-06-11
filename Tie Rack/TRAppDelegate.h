@@ -8,6 +8,7 @@
 // mark test
 
 #import <UIKit/UIKit.h>
+#import "TRViewController.h"
 
 @interface TRAppDelegate : UIResponder <UIApplicationDelegate>
 
