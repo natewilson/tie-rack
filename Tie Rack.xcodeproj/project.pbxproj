@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4039F7D41757F5E400ACA2B2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4039F7D31757F5E400ACA2B2 /* AVFoundation.framework */; };
+		40AAB3E51767839600F6E5F5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4039F7D11757F5DC00ACA2B2 /* CoreMedia.framework */; };
 		5D02B4C9174E74EB009014FD /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5D02B4C8174E74EB009014FD /* readme.md */; };
 		CFC80383174C0FE0006B492F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80382174C0FE0006B492F /* UIKit.framework */; };
 		CFC80385174C0FE0006B492F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80384174C0FE0006B492F /* Foundation.framework */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4039F7D11757F5DC00ACA2B2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		4039F7D31757F5E400ACA2B2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5D02B4C8174E74EB009014FD /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = SOURCE_ROOT; };
 		CFC8037F174C0FE0006B492F /* Tie Rack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tie Rack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC80382174C0FE0006B492F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -48,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40AAB3E51767839600F6E5F5 /* CoreMedia.framework in Frameworks */,
+				4039F7D41757F5E400ACA2B2 /* AVFoundation.framework in Frameworks */,
 				CFC80383174C0FE0006B492F /* UIKit.framework in Frameworks */,
 				CFC80385174C0FE0006B492F /* Foundation.framework in Frameworks */,
 				CFC80387174C0FE0006B492F /* CoreGraphics.framework in Frameworks */,
@@ -60,6 +66,8 @@
 		CFC80376174C0FE0006B492F = {
 			isa = PBXGroup;
 			children = (
+				4039F7D31757F5E400ACA2B2 /* AVFoundation.framework */,
+				4039F7D11757F5DC00ACA2B2 /* CoreMedia.framework */,
 				CFC80388174C0FE0006B492F /* Tie Rack */,
 				CFC80381174C0FE0006B492F /* Frameworks */,
 				CFC80380174C0FE0006B492F /* Products */,
@@ -87,6 +95,9 @@
 		CFC80388174C0FE0006B492F /* Tie Rack */ = {
 			isa = PBXGroup;
 			children = (
+				F31CF3091755110400F9B324 /* TRViewController.h */,
+				F31CF30A1755110400F9B324 /* TRViewController.m */,
+				F31CF30B1755110400F9B324 /* TRViewController.xib */,
 				5D02B4C8174E74EB009014FD /* readme.md */,
 				CFC80391174C0FE0006B492F /* TRAppDelegate.h */,
 				CFC80392174C0FE0006B492F /* TRAppDelegate.m */,
@@ -102,9 +113,6 @@
 				CFC8038A174C0FE0006B492F /* Tie Rack-Info.plist */,
 				CFC8038B174C0FE0006B492F /* InfoPlist.strings */,
 				CFC8038E174C0FE0006B492F /* main.m */,
-				F31CF3091755110400F9B324 /* TRViewController.h */,
-				F31CF30A1755110400F9B324 /* TRViewController.m */,
-				F31CF30B1755110400F9B324 /* TRViewController.xib */,
 				CFC80390174C0FE0006B492F /* Tie Rack-Prefix.pch */,
 				CFC80394174C0FE0006B492F /* Default.png */,
 				CFC80396174C0FE0006B492F /* Default@2x.png */,

@@ -7,13 +7,22 @@
 // <('o'<)
 
 #import "TRAppDelegate.h"
+#import "TRViewController.h"
 
 @implementation TRAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+
     // Override point for customization after application launch.
+    TRViewController *trvc = [[TRViewController alloc] init];
+    
+    [[self window] setRootViewController:trvc]; //set the view controller for the app
+    
+    [[trvc view] setBackgroundColor:[UIColor clearColor]];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

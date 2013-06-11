@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreMedia/CoreMedia.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface TRViewController : UIViewController
+
+@property (strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
+@property (strong, nonatomic) AVCaptureSession *captureSession;
 
 @end
