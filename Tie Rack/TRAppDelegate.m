@@ -23,7 +23,7 @@
     
     [[trvc view] setBackgroundColor:[UIColor clearColor]];
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    //self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -19,6 +19,17 @@
 @synthesize captureSession;
 @synthesize previewLayer;
 
+- (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
+    NSInteger dir = [sender direction];
+
+    NSLog(@"Swiped:%d",dir);
+}
+- (IBAction)swipeLeft:(UISwipeGestureRecognizer *)sender {
+    NSInteger dir = [sender direction];
+    
+    NSLog(@"Swiped:%d",dir);
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,7 +63,9 @@
 	[[self previewLayer] setBounds:layerRect];
 	[[self previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect),
                                                                   CGRectGetMidY(layerRect))];
-	[[[self view] layer] addSublayer:[self previewLayer]];
+	//[[[self view] layer] addSublayer:[self previewLayer]];
+    [[[self view] layer] insertSublayer:[self previewLayer] atIndex:0];
+    //[[self view] addSubview:[self previewLayer]];
     
     //start the capture session
     [captureSession startRunning];
