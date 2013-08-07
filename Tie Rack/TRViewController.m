@@ -11,22 +11,36 @@
 
 
 @interface TRViewController ()
-
+// TODO: Use this property to cycle through images...
+@property (strong, nonatomic) IBOutlet UIImageView *tieImageView;
+@property (strong, nonatomic) UIImage *rightTie;
+@property (strong, nonatomic) UIImage *leftTie;
 @end
+
 
 @implementation TRViewController
 
 @synthesize captureSession;
 @synthesize previewLayer;
 
+- (UIImage *)rightTie {
+    if (!_rightTie) _rightTie = [UIImage imageNamed:@"leadercast-tie"];
+    return _rightTie;
+}
+
+- (UIImage *) leftTie {
+    if (!_leftTie) _leftTie = [UIImage imageNamed:@"tie"];
+    return _leftTie;
+}
+
 - (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
     NSInteger dir = [sender direction];
-
+    [self.tieImageView setImage:self.leftTie];
     NSLog(@"Swiped:%d",dir);
 }
 - (IBAction)swipeLeft:(UISwipeGestureRecognizer *)sender {
     NSInteger dir = [sender direction];
-    
+    [self.tieImageView setImage:self.rightTie];
     NSLog(@"Swiped:%d",dir);
 }
 
