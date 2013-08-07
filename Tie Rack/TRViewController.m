@@ -24,12 +24,12 @@
 @synthesize previewLayer;
 
 - (UIImage *)rightTie {
-    if (!_rightTie) _rightTie = [UIImage imageNamed:@"leadercast-tie"];
+    if (!_rightTie) _rightTie = [UIImage imageNamed:@"leadercast"];
     return _rightTie;
 }
 
 - (UIImage *) leftTie {
-    if (!_leftTie) _leftTie = [UIImage imageNamed:@"tie"];
+    if (!_leftTie) _leftTie = [UIImage imageNamed:@"usa"];
     return _leftTie;
 }
 
