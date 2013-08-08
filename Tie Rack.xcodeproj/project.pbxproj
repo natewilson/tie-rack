@@ -12,6 +12,8 @@
 		5D02B4C9174E74EB009014FD /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5D02B4C8174E74EB009014FD /* readme.md */; };
 		CF4DD14017B29295007550DE /* leadercast.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4DD13E17B29295007550DE /* leadercast.png */; };
 		CF4DD14117B29295007550DE /* usa.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4DD13F17B29295007550DE /* usa.png */; };
+		CF81306C17B3103B00ABEB04 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = CF81306B17B3103B00ABEB04 /* orange.png */; };
+		CF81306F17B3594200ABEB04 /* TRTiesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF81306E17B3594200ABEB04 /* TRTiesListModel.m */; };
 		CFC80383174C0FE0006B492F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80382174C0FE0006B492F /* UIKit.framework */; };
 		CFC80385174C0FE0006B492F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80384174C0FE0006B492F /* Foundation.framework */; };
 		CFC80387174C0FE0006B492F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80386174C0FE0006B492F /* CoreGraphics.framework */; };
@@ -36,6 +38,9 @@
 		5D02B4C8174E74EB009014FD /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = SOURCE_ROOT; };
 		CF4DD13E17B29295007550DE /* leadercast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leadercast.png; path = ties/leadercast.png; sourceTree = "<group>"; };
 		CF4DD13F17B29295007550DE /* usa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = usa.png; path = ties/usa.png; sourceTree = "<group>"; };
+		CF81306B17B3103B00ABEB04 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange.png; path = ties/orange.png; sourceTree = "<group>"; };
+		CF81306D17B3594200ABEB04 /* TRTiesListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRTiesListModel.h; sourceTree = "<group>"; };
+		CF81306E17B3594200ABEB04 /* TRTiesListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRTiesListModel.m; sourceTree = "<group>"; };
 		CFC8037F174C0FE0006B492F /* Tie Rack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tie Rack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC80382174C0FE0006B492F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CFC80384174C0FE0006B492F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,6 +83,7 @@
 		CF4DD13D17B29262007550DE /* ties */ = {
 			isa = PBXGroup;
 			children = (
+				CF81306B17B3103B00ABEB04 /* orange.png */,
 				CF4DD13E17B29295007550DE /* leadercast.png */,
 				CF4DD13F17B29295007550DE /* usa.png */,
 			);
@@ -129,6 +135,8 @@
 				CFC80391174C0FE0006B492F /* TRAppDelegate.h */,
 				CFC80392174C0FE0006B492F /* TRAppDelegate.m */,
 				CFC80389174C0FE0006B492F /* Supporting Files */,
+				CF81306D17B3594200ABEB04 /* TRTiesListModel.h */,
+				CF81306E17B3594200ABEB04 /* TRTiesListModel.m */,
 			);
 			path = "Tie Rack";
 			sourceTree = "<group>";
@@ -212,6 +220,7 @@
 				CFF5A4FF17B1A17E00F3D8D0 /* Default-568h@2x.png in Resources */,
 				CF4DD14017B29295007550DE /* leadercast.png in Resources */,
 				CF4DD14117B29295007550DE /* usa.png in Resources */,
+				CF81306C17B3103B00ABEB04 /* orange.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +234,7 @@
 				CFC8038F174C0FE0006B492F /* main.m in Sources */,
 				CFC80393174C0FE0006B492F /* TRAppDelegate.m in Sources */,
 				F31CF30C1755110400F9B324 /* TRViewController.m in Sources */,
+				CF81306F17B3594200ABEB04 /* TRTiesListModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

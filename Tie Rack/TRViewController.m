@@ -24,7 +24,7 @@
 @synthesize previewLayer;
 
 - (UIImage *)rightTie {
-    if (!_rightTie) _rightTie = [UIImage imageNamed:@"leadercast"];
+    if (!_rightTie) _rightTie = [UIImage imageNamed:@"orange"];
     return _rightTie;
 }
 
@@ -35,7 +35,9 @@
 
 - (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
     NSInteger dir = [sender direction];
-    [self.tieImageView setImage:self.leftTie];
+    if (dir == UISwipeGestureRecognizerDirectionRight) {
+        [self.tieImageView setImage:self.leftTie];
+    }
     NSLog(@"Swiped:%d",dir);
 }
 - (IBAction)swipeLeft:(UISwipeGestureRecognizer *)sender {
