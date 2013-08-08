@@ -7,14 +7,12 @@
 //
 
 #import "TRViewController.h"
-
-
+#import "TRTiesListModel.h"
+#import <UIKit/UISwipeGestureRecognizer.h>
 
 @interface TRViewController ()
-// TODO: Use this property to cycle through images...
 @property (strong, nonatomic) IBOutlet UIImageView *tieImageView;
-@property (strong, nonatomic) UIImage *rightTie;
-@property (strong, nonatomic) UIImage *leftTie;
+@property (strong, nonatomic) TRTiesListModel *rack;
 @end
 
 
@@ -23,27 +21,23 @@
 @synthesize captureSession;
 @synthesize previewLayer;
 
-- (UIImage *)rightTie {
-    if (!_rightTie) _rightTie = [UIImage imageNamed:@"orange"];
-    return _rightTie;
-}
-
-- (UIImage *) leftTie {
-    if (!_leftTie) _leftTie = [UIImage imageNamed:@"usa"];
-    return _leftTie;
-}
 
 - (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
     NSInteger dir = [sender direction];
-    if (dir == UISwipeGestureRecognizerDirectionRight) {
-        [self.tieImageView setImage:self.leftTie];
+    if (dir == UISwipeGestureRecognizerDirectionLeft) {
+        [self.tieImageView setImage:[self.rack previousTieImage]];
+        [self.rack moveTiesToPrevious];
+    } else if (dir == UISwipeGestureRecognizerDirectionRight) {
+        [self.tieImageView setImage:[self.rack nextTieImage]];
+        [self.rack moveTiesToNext];
     }
     NSLog(@"Swiped:%d",dir);
 }
-- (IBAction)swipeLeft:(UISwipeGestureRecognizer *)sender {
-    NSInteger dir = [sender direction];
-    [self.tieImageView setImage:self.rightTie];
-    NSLog(@"Swiped:%d",dir);
+
+- (TRTiesListModel *) rack {
+    // "lazy instantiation" pattern
+    if (!_rack) _rack = [[TRTiesListModel alloc] init];
+    return _rack;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -60,6 +54,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // Set the Initial Tie view to the currentTieImage
+    [self.tieImageView setImage:[self.rack currentTieImage]];
     
     //add video input
     AVCaptureDevice *videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
