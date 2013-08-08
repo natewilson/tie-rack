@@ -14,6 +14,7 @@
 		CF4DD14117B29295007550DE /* usa.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4DD13F17B29295007550DE /* usa.png */; };
 		CF81306C17B3103B00ABEB04 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = CF81306B17B3103B00ABEB04 /* orange.png */; };
 		CF81306F17B3594200ABEB04 /* TRTiesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF81306E17B3594200ABEB04 /* TRTiesListModel.m */; };
+		CF81307117B3F44F00ABEB04 /* icon-green.png in Resources */ = {isa = PBXBuildFile; fileRef = CF81307017B3F44F00ABEB04 /* icon-green.png */; };
 		CFC80383174C0FE0006B492F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80382174C0FE0006B492F /* UIKit.framework */; };
 		CFC80385174C0FE0006B492F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80384174C0FE0006B492F /* Foundation.framework */; };
 		CFC80387174C0FE0006B492F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80386174C0FE0006B492F /* CoreGraphics.framework */; };
@@ -41,6 +42,7 @@
 		CF81306B17B3103B00ABEB04 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange.png; path = ties/orange.png; sourceTree = "<group>"; };
 		CF81306D17B3594200ABEB04 /* TRTiesListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRTiesListModel.h; sourceTree = "<group>"; };
 		CF81306E17B3594200ABEB04 /* TRTiesListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRTiesListModel.m; sourceTree = "<group>"; };
+		CF81307017B3F44F00ABEB04 /* icon-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-green.png"; path = "ties/icon-green.png"; sourceTree = "<group>"; };
 		CFC8037F174C0FE0006B492F /* Tie Rack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tie Rack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC80382174C0FE0006B492F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CFC80384174C0FE0006B492F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,6 +85,7 @@
 		CF4DD13D17B29262007550DE /* ties */ = {
 			isa = PBXGroup;
 			children = (
+				CF81307017B3F44F00ABEB04 /* icon-green.png */,
 				CF81306B17B3103B00ABEB04 /* orange.png */,
 				CF4DD13E17B29295007550DE /* leadercast.png */,
 				CF4DD13F17B29295007550DE /* usa.png */,
@@ -221,6 +224,7 @@
 				CF4DD14017B29295007550DE /* leadercast.png in Resources */,
 				CF4DD14117B29295007550DE /* usa.png in Resources */,
 				CF81306C17B3103B00ABEB04 /* orange.png in Resources */,
+				CF81307117B3F44F00ABEB04 /* icon-green.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

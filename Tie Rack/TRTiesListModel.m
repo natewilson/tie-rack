@@ -49,6 +49,7 @@
 - (NSArray *) tieNames {
     if (!_tieNames) _tieNames = @[@"orange",
                                   @"leadercast",
+                                  @"icon-green",
                                   @"usa"
                                   ];
     return _tieNames;
