@@ -53,6 +53,9 @@
                                   ];
     return _tieNames;
 }
+- (int) numberOfTies {
+    return [self.tieNames count];
+}
 - (int) currentTieIndex {
     if (!_currentTieIndex) _currentTieIndex = 0;
     return _currentTieIndex;

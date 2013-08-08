@@ -18,4 +18,7 @@
 - (void) moveTiesToNext;
 - (void) moveTiesToPrevious;
 
+- (int) numberOfTies;
+- (int) currentTieIndex;
+
 @end

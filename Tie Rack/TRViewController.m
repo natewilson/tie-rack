@@ -11,6 +11,7 @@
 #import <UIKit/UISwipeGestureRecognizer.h>
 
 @interface TRViewController ()
+@property (strong, nonatomic) IBOutlet UIPageControl *tieIndicator;
 @property (strong, nonatomic) IBOutlet UIImageView *tieImageView;
 @property (strong, nonatomic) TRTiesListModel *rack;
 @end
@@ -31,6 +32,8 @@
         [self.tieImageView setImage:[self.rack nextTieImage]];
         [self.rack moveTiesToNext];
     }
+    // Update the paging indicator
+    [self.tieIndicator setCurrentPage:[self.rack currentTieIndex]];
     NSLog(@"Swiped:%d",dir);
 }
 
@@ -57,6 +60,10 @@
     
     // Set the Initial Tie view to the currentTieImage
     [self.tieImageView setImage:[self.rack currentTieImage]];
+    
+    // Also setup the tieIndicator
+    [self.tieIndicator setNumberOfPages:[self.rack numberOfTies]];
+    [self.tieIndicator setCurrentPage:[self.rack currentTieIndex]];
     
     //add video input
     AVCaptureDevice *videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
