@@ -26,11 +26,11 @@
 - (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
     NSInteger dir = [sender direction];
     if (dir == UISwipeGestureRecognizerDirectionLeft) {
-        [self.tieImageView setImage:[self.rack previousTieImage]];
-        [self.rack moveTiesToPrevious];
-    } else if (dir == UISwipeGestureRecognizerDirectionRight) {
         [self.tieImageView setImage:[self.rack nextTieImage]];
         [self.rack moveTiesToNext];
+    } else if (dir == UISwipeGestureRecognizerDirectionRight) {
+        [self.tieImageView setImage:[self.rack previousTieImage]];
+        [self.rack moveTiesToPrevious];
     }
     // Update the paging indicator
     [self.tieIndicator setCurrentPage:[self.rack currentTieIndex]];
