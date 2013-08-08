@@ -50,7 +50,9 @@
     if (!_tieNames) _tieNames = @[@"orange",
                                   @"leadercast",
                                   @"icon-green",
-                                  @"usa"
+                                  @"icon-yellow",
+                                  @"usa",
+                                  @"fruitypepples"
                                   ];
     return _tieNames;
 }
