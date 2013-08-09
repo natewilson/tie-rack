@@ -36,6 +36,14 @@
     [self.tieIndicator setCurrentPage:[self.rack currentTieIndex]];
     NSLog(@"Swiped:%d",dir);
 }
+- (IBAction)rotate:(UIRotationGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateBegan)
+        NSLog(@"Rotation BEGAN");
+    if (sender.state == UIGestureRecognizerStateEnded)
+        NSLog(@"Rotation ENDED");
+    self.tieImageView.transform = CGAffineTransformMakeRotation( sender.rotation);
+    NSLog(@"Rotation: %f", sender.rotation);
+}
 
 - (TRTiesListModel *) rack {
     // "lazy instantiation" pattern
