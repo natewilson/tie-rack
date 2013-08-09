@@ -12,6 +12,8 @@
 		5D02B4C9174E74EB009014FD /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5D02B4C8174E74EB009014FD /* readme.md */; };
 		CF4DD14017B29295007550DE /* leadercast.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4DD13E17B29295007550DE /* leadercast.png */; };
 		CF4DD14117B29295007550DE /* usa.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4DD13F17B29295007550DE /* usa.png */; };
+		CF81307E17B56A4100ABEB04 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF81307C17B56A4100ABEB04 /* libGoogleAnalytics.a */; };
+		CF81307F17B56A4100ABEB04 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF81307D17B56A4100ABEB04 /* libGoogleAnalytics_debug.a */; };
 		CFC80383174C0FE0006B492F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80382174C0FE0006B492F /* UIKit.framework */; };
 		CFC80385174C0FE0006B492F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80384174C0FE0006B492F /* Foundation.framework */; };
 		CFC80387174C0FE0006B492F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80386174C0FE0006B492F /* CoreGraphics.framework */; };
@@ -36,6 +38,13 @@
 		5D02B4C8174E74EB009014FD /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = SOURCE_ROOT; };
 		CF4DD13E17B29295007550DE /* leadercast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leadercast.png; path = ties/leadercast.png; sourceTree = "<group>"; };
 		CF4DD13F17B29295007550DE /* usa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = usa.png; path = ties/usa.png; sourceTree = "<group>"; };
+		CF81307717B56A4100ABEB04 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		CF81307817B56A4100ABEB04 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		CF81307917B56A4100ABEB04 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		CF81307A17B56A4100ABEB04 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
+		CF81307B17B56A4100ABEB04 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
+		CF81307C17B56A4100ABEB04 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		CF81307D17B56A4100ABEB04 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
 		CFC8037F174C0FE0006B492F /* Tie Rack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tie Rack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC80382174C0FE0006B492F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CFC80384174C0FE0006B492F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,6 +78,8 @@
 				CFC80383174C0FE0006B492F /* UIKit.framework in Frameworks */,
 				CFC80385174C0FE0006B492F /* Foundation.framework in Frameworks */,
 				CFC80387174C0FE0006B492F /* CoreGraphics.framework in Frameworks */,
+				CF81307E17B56A4100ABEB04 /* libGoogleAnalytics.a in Frameworks */,
+				CF81307F17B56A4100ABEB04 /* libGoogleAnalytics_debug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +93,20 @@
 				CF4DD13F17B29295007550DE /* usa.png */,
 			);
 			name = ties;
+			sourceTree = "<group>";
+		};
+		CF81307617B56A4100ABEB04 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				CF81307717B56A4100ABEB04 /* GAI.h */,
+				CF81307817B56A4100ABEB04 /* GAITrackedViewController.h */,
+				CF81307917B56A4100ABEB04 /* GAITracker.h */,
+				CF81307A17B56A4100ABEB04 /* GAITransaction.h */,
+				CF81307B17B56A4100ABEB04 /* GAITransactionItem.h */,
+				CF81307C17B56A4100ABEB04 /* libGoogleAnalytics.a */,
+				CF81307D17B56A4100ABEB04 /* libGoogleAnalytics_debug.a */,
+			);
+			path = GoogleAnalytics;
 			sourceTree = "<group>";
 		};
 		CFC80376174C0FE0006B492F = {
@@ -121,6 +146,7 @@
 		CFC80388174C0FE0006B492F /* Tie Rack */ = {
 			isa = PBXGroup;
 			children = (
+				CF81307617B56A4100ABEB04 /* GoogleAnalytics */,
 				CF4DD13D17B29262007550DE /* ties */,
 				F31CF3091755110400F9B324 /* TRViewController.h */,
 				F31CF30A1755110400F9B324 /* TRViewController.m */,
@@ -306,6 +332,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tie Rack/Tie Rack-Prefix.pch";
 				INFOPLIST_FILE = "Tie Rack/Tie Rack-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Tie Rack/GoogleAnalytics\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -317,6 +347,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tie Rack/Tie Rack-Prefix.pch";
 				INFOPLIST_FILE = "Tie Rack/Tie Rack-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Tie Rack/GoogleAnalytics\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
