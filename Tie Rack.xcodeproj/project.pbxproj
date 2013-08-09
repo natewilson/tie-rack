@@ -14,6 +14,10 @@
 		CF4DD14117B29295007550DE /* usa.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4DD13F17B29295007550DE /* usa.png */; };
 		CF81307E17B56A4100ABEB04 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF81307C17B56A4100ABEB04 /* libGoogleAnalytics.a */; };
 		CF81307F17B56A4100ABEB04 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF81307D17B56A4100ABEB04 /* libGoogleAnalytics_debug.a */; };
+		CF81308117B56E6E00ABEB04 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF81308017B56E6E00ABEB04 /* CoreData.framework */; };
+		CF81308317B56E7800ABEB04 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF81308217B56E7800ABEB04 /* SystemConfiguration.framework */; };
+		CF81308617B57A2000ABEB04 /* TRAnalyticsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF81308517B57A2000ABEB04 /* TRAnalyticsUtils.m */; };
+		CF81308A17B57BDC00ABEB04 /* GA-Tracker-ID.txt in Resources */ = {isa = PBXBuildFile; fileRef = CF81308917B57BDC00ABEB04 /* GA-Tracker-ID.txt */; };
 		CFC80383174C0FE0006B492F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80382174C0FE0006B492F /* UIKit.framework */; };
 		CFC80385174C0FE0006B492F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80384174C0FE0006B492F /* Foundation.framework */; };
 		CFC80387174C0FE0006B492F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80386174C0FE0006B492F /* CoreGraphics.framework */; };
@@ -45,6 +49,11 @@
 		CF81307B17B56A4100ABEB04 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
 		CF81307C17B56A4100ABEB04 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		CF81307D17B56A4100ABEB04 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
+		CF81308017B56E6E00ABEB04 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CF81308217B56E7800ABEB04 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CF81308417B57A2000ABEB04 /* TRAnalyticsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRAnalyticsUtils.h; sourceTree = "<group>"; };
+		CF81308517B57A2000ABEB04 /* TRAnalyticsUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRAnalyticsUtils.m; sourceTree = "<group>"; };
+		CF81308917B57BDC00ABEB04 /* GA-Tracker-ID.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GA-Tracker-ID.txt"; sourceTree = "<group>"; };
 		CFC8037F174C0FE0006B492F /* Tie Rack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tie Rack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC80382174C0FE0006B492F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CFC80384174C0FE0006B492F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF81308317B56E7800ABEB04 /* SystemConfiguration.framework in Frameworks */,
+				CF81308117B56E6E00ABEB04 /* CoreData.framework in Frameworks */,
 				40AAB3E51767839600F6E5F5 /* CoreMedia.framework in Frameworks */,
 				4039F7D41757F5E400ACA2B2 /* AVFoundation.framework in Frameworks */,
 				CFC80383174C0FE0006B492F /* UIKit.framework in Frameworks */,
@@ -112,6 +123,8 @@
 		CFC80376174C0FE0006B492F = {
 			isa = PBXGroup;
 			children = (
+				CF81308217B56E7800ABEB04 /* SystemConfiguration.framework */,
+				CF81308017B56E6E00ABEB04 /* CoreData.framework */,
 				CFF5A4FE17B1A17E00F3D8D0 /* Default-568h@2x.png */,
 				CFF5A4FC17B1A17100F3D8D0 /* Default@2x.png */,
 				CFF5A4FA17B1A16E00F3D8D0 /* Default.png */,
@@ -169,6 +182,9 @@
 				CFC80394174C0FE0006B492F /* Default.png */,
 				CFC80396174C0FE0006B492F /* Default@2x.png */,
 				CFC80398174C0FE0006B492F /* Default-568h@2x.png */,
+				CF81308417B57A2000ABEB04 /* TRAnalyticsUtils.h */,
+				CF81308517B57A2000ABEB04 /* TRAnalyticsUtils.m */,
+				CF81308917B57BDC00ABEB04 /* GA-Tracker-ID.txt */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -238,6 +254,7 @@
 				CFF5A4FF17B1A17E00F3D8D0 /* Default-568h@2x.png in Resources */,
 				CF4DD14017B29295007550DE /* leadercast.png in Resources */,
 				CF4DD14117B29295007550DE /* usa.png in Resources */,
+				CF81308A17B57BDC00ABEB04 /* GA-Tracker-ID.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +268,7 @@
 				CFC8038F174C0FE0006B492F /* main.m in Sources */,
 				CFC80393174C0FE0006B492F /* TRAppDelegate.m in Sources */,
 				F31CF30C1755110400F9B324 /* TRViewController.m in Sources */,
+				CF81308617B57A2000ABEB04 /* TRAnalyticsUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

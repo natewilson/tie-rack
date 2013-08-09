@@ -50,6 +50,9 @@
     if (self) {
         // Custom initialization
         [self setCaptureSession:[[AVCaptureSession alloc] init]];
+        
+        // Setting View name for Google Analytics
+        self.trackedViewName = @"Live View";
     }
     return self;
 }

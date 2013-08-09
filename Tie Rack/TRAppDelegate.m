@@ -8,14 +8,26 @@
 
 #import "TRAppDelegate.h"
 #import "TRViewController.h"
+#import "GAI.h"
+#import "TRAnalyticsUtils.h"
 
 @implementation TRAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Setup Google Analytics
+    
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    // Optional: set debug to YES for extra debugging information.
+    [GAI sharedInstance].debug = YES;
+    // Create tracker instance.
+    id<GAITracker> __attribute__((unused)) tracker = [[GAI sharedInstance] trackerWithTrackingId:[TRAnalyticsUtils GATrackerCode]];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-
     // Override point for customization after application launch.
     TRViewController *trvc = [[TRViewController alloc] init];
     

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreMedia/CoreMedia.h>
 #import <AVFoundation/AVFoundation.h>
+#import "GAITrackedViewController.h"
 
-@interface TRViewController : UIViewController
+@interface TRViewController : GAITrackedViewController
 
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 @property (strong, nonatomic) AVCaptureSession *captureSession;
