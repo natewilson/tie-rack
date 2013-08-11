@@ -8,20 +8,30 @@
 
 #import "TRViewController.h"
 #import "TRTiesListModel.h"
+#import "TRPhotoBuilder.h"
 #import <UIKit/UISwipeGestureRecognizer.h>
 
 @interface TRViewController ()
 @property (strong, nonatomic) IBOutlet UIPageControl *tieIndicator;
 @property (strong, nonatomic) IBOutlet UIImageView *tieImageView;
 @property (strong, nonatomic) TRTiesListModel *rack;
+@property (nonatomic) CGFloat lastTieRotation;
+@property (nonatomic) CGFloat lastTieScale;
+@property (nonatomic) CGFloat lastTieYCoord;
+@property (nonatomic) CGFloat firstTieYCoord;
 @end
 
+// Constants for limiting tie changes:
+#define MAX_TIE_SCALE     1.6
+#define MIN_TIE_SCALE     0.6
+#define MIN_TIE_PAN     -80.0
+#define MAX_TIE_PAN      80.0
 
 @implementation TRViewController
 
+// Properties exposed externally
 @synthesize captureSession;
 @synthesize previewLayer;
-
 
 - (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
     NSInteger dir = [sender direction];
@@ -38,17 +48,65 @@
 }
 - (IBAction)rotate:(UIRotationGestureRecognizer *)sender {
     if (sender.state == UIGestureRecognizerStateBegan)
-        NSLog(@"Rotation BEGAN");
-    if (sender.state == UIGestureRecognizerStateEnded)
-        NSLog(@"Rotation ENDED");
-    self.tieImageView.transform = CGAffineTransformMakeRotation( sender.rotation);
-    NSLog(@"Rotation: %f", sender.rotation);
+        sender.rotation = self.lastTieRotation;
+    else if (sender.state == UIGestureRecognizerStateEnded)
+        self.lastTieRotation = sender.rotation;
+    self.tieImageView.transform = CGAffineTransformConcat(
+            CGAffineTransformMakeRotation(sender.rotation),
+            CGAffineTransformMakeScale(self.lastTieScale,self.lastTieScale)
+                                                          );
+}
+- (IBAction)scaleTie:(UIPinchGestureRecognizer *)sender {
+    CGFloat constrainedScale = [self constrainFloat: sender.scale
+                                              byMin: MIN_TIE_SCALE
+                                             andMax: MAX_TIE_SCALE];
+    if (sender.state == UIGestureRecognizerStateBegan)
+        sender.scale = self.lastTieScale;
+    else if (sender.state == UIGestureRecognizerStateEnded)
+        self.lastTieScale = constrainedScale;
+    self.tieImageView.transform = CGAffineTransformConcat(
+            CGAffineTransformMakeRotation(self.lastTieRotation),
+            CGAffineTransformMakeScale(constrainedScale, constrainedScale)
+                                                          );
+}
+// When connected to a pan gesture, this prevents swiping left/right from
+// being recognized by the swipe gestures above.
+- (IBAction)moveTie:(UIPanGestureRecognizer *)sender {
+    UIView *context = [self.tieImageView superview];
+    CGPoint constrainedCoord = [sender translationInView:context];
+    constrainedCoord.y = [self constrainFloat: constrainedCoord.y
+                                        byMin: MIN_TIE_PAN
+                                       andMax: MAX_TIE_PAN];
+    if (sender.state == UIGestureRecognizerStateBegan){
+        constrainedCoord.y = self.lastTieYCoord;
+        [sender setTranslation:constrainedCoord inView:context];
+    } else if (sender.state == UIGestureRecognizerStateEnded){
+        self.lastTieYCoord = constrainedCoord.y;
+    }
+    CGPoint newCenter;
+    newCenter.x = [self.tieImageView center].x;
+    newCenter.y = self.firstTieYCoord + constrainedCoord.y;
+    [self.tieImageView setCenter:newCenter];
+}
+- (IBAction)takeSnapshot:(UIButton *)sender {
+    TRPhotoBuilder *photographer = [[TRPhotoBuilder alloc] init];
+    [photographer captureImage:self];
 }
 
 - (TRTiesListModel *) rack {
     // "lazy instantiation" pattern
     if (!_rack) _rack = [[TRTiesListModel alloc] init];
     return _rack;
+}
+
+- (CGFloat) lastTieScale {
+    if (!_lastTieScale) _lastTieScale = 1.0;
+    return _lastTieScale;
+}
+
+- (CGFloat) firstTieYCoord {
+    if (!_firstTieYCoord) _firstTieYCoord = [self.tieImageView center].y;
+    return _firstTieYCoord;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -104,6 +162,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// Utility methods
+- (CGFloat) constrainFloat: (CGFloat) f byMin: (CGFloat) min andMax: (CGFloat) max {
+    if (f > max) return max;
+    else if (f < min) return min;
+    else return f;
 }
 
 @end
