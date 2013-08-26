@@ -9,6 +9,7 @@
 #import "TRViewController.h"
 #import "TRTiesListModel.h"
 #import "TRPhotoBuilder.h"
+#import "TRScrollingTieRackView.h"
 #import <UIKit/UISwipeGestureRecognizer.h>
 
 @interface TRViewController ()
@@ -152,6 +153,10 @@
 	//[[[self view] layer] addSublayer:[self previewLayer]];
     [[[self view] layer] insertSublayer:[self previewLayer] atIndex:0];
     //[[self view] addSubview:[self previewLayer]];
+    
+    // Add a scrolling rack view?
+    TRScrollingTieRackView *rackView = [[TRScrollingTieRackView alloc] initWithFrame:CGRectMake(0, 0, 320, 380) andTieList:self.rack];
+    [self.view addSubview:rackView];
     
     //start the capture session
     [captureSession startRunning];
