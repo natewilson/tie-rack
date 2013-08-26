@@ -11,6 +11,6 @@
 
 @interface TRPhotoBuilder : NSObject
 
-- (void) captureImage: (TRViewController *) ctrl;
+- (void) captureImage: (TRViewController *) ctrl withTie: (UIImage *)tie;
 
 @end

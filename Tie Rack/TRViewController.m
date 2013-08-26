@@ -90,7 +90,7 @@
 }
 - (IBAction)takeSnapshot:(UIButton *)sender {
     TRPhotoBuilder *photographer = [[TRPhotoBuilder alloc] init];
-    [photographer captureImage:self];
+    [photographer captureImage:self withTie:[self.rack currentTieImage]];
 }
 
 - (TRTiesListModel *) rack {
