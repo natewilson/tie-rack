@@ -47,12 +47,15 @@
 
 // Accessor methods
 - (NSArray *) tieNames {
-    if (!_tieNames) _tieNames = @[@"orange",
+    if (!_tieNames) _tieNames = @[
+                                  @"fruitypepples",
                                   @"leadercast",
+                                  @"leadercast-grey",
                                   @"icon-green",
                                   @"icon-yellow",
+                                  @"orange",
                                   @"usa",
-                                  @"fruitypepples"
+                                  @"college-kickoff"
                                   ];
     return _tieNames;
 }
