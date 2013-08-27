@@ -14,6 +14,7 @@
 		CF09731E17CBD73700663ADD /* TRScrollingTieRackView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF09731D17CBD73700663ADD /* TRScrollingTieRackView.m */; };
 		CF4DD14017B29295007550DE /* leadercast.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4DD13E17B29295007550DE /* leadercast.png */; };
 		CF4DD14117B29295007550DE /* usa.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4DD13F17B29295007550DE /* usa.png */; };
+		CF4E76FD17CCCCA400F4D226 /* TieRack-imageBrand.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4E76FC17CCCCA400F4D226 /* TieRack-imageBrand.png */; };
 		CF81306C17B3103B00ABEB04 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = CF81306B17B3103B00ABEB04 /* orange.png */; };
 		CF81306F17B3594200ABEB04 /* TRTiesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF81306E17B3594200ABEB04 /* TRTiesListModel.m */; };
 		CF81307117B3F44F00ABEB04 /* icon-green.png in Resources */ = {isa = PBXBuildFile; fileRef = CF81307017B3F44F00ABEB04 /* icon-green.png */; };
@@ -50,6 +51,7 @@
 		CF09731D17CBD73700663ADD /* TRScrollingTieRackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRScrollingTieRackView.m; sourceTree = "<group>"; };
 		CF4DD13E17B29295007550DE /* leadercast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leadercast.png; path = ties/leadercast.png; sourceTree = "<group>"; };
 		CF4DD13F17B29295007550DE /* usa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = usa.png; path = ties/usa.png; sourceTree = "<group>"; };
+		CF4E76FC17CCCCA400F4D226 /* TieRack-imageBrand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TieRack-imageBrand.png"; path = "img/TieRack-imageBrand.png"; sourceTree = "<group>"; };
 		CF81306B17B3103B00ABEB04 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange.png; path = ties/orange.png; sourceTree = "<group>"; };
 		CF81306D17B3594200ABEB04 /* TRTiesListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRTiesListModel.h; sourceTree = "<group>"; };
 		CF81306E17B3594200ABEB04 /* TRTiesListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRTiesListModel.m; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		CFC80389174C0FE0006B492F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CF4E76FC17CCCCA400F4D226 /* TieRack-imageBrand.png */,
 				CF8130D317B7154600ABEB04 /* camera.png */,
 				CFC8038A174C0FE0006B492F /* Tie Rack-Info.plist */,
 				CFC8038B174C0FE0006B492F /* InfoPlist.strings */,
@@ -260,6 +263,7 @@
 				CF81307517B43EEA00ABEB04 /* icon-yellow.png in Resources */,
 				CF8130D217B7141E00ABEB04 /* Attribution.txt in Resources */,
 				CF8130D417B7154600ABEB04 /* camera.png in Resources */,
+				CF4E76FD17CCCCA400F4D226 /* TieRack-imageBrand.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
