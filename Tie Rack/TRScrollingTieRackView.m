@@ -5,6 +5,22 @@
 //  Created by Nate Wilson on 8/26/13.
 //  Copyright (c) 2013 iOS Study Group. All rights reserved.
 //
+//
+//  Basic Principles:
+//
+//  1.) Three underlying images:
+//  The Scrolling Tie Rack View never uses more than three UIImage views in
+//  the content area it contains.  When a scroll is detected to the left, the
+//  object begins to load the next left image while the scroll animation is
+//  active.  Once the animation ends, the object will shift all images to the
+//  right while simultaneously re-positioning the content area on the center
+//  image (the "screenView" UIImageView instance).  This creates the effect
+//  that the user has actually moved one image to the left.
+//  2.) Shared transformation:
+//  The Scrolling Tie Rack View will dispatch new transform objects to all
+//  three of the images that appear in the content area.  This way, when
+//  manipulating the rotation, scale, etc. of the content, all images receive
+//  the same treatment.  
 
 #import "TRScrollingTieRackView.h"
 #import "TRTiesListModel.h"
