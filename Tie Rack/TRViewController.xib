@@ -44,7 +44,6 @@
 						<string key="NSFrame">{{135, 444}, {39, 36}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -134,6 +133,14 @@
 						<reference key="destination" ref="967492190"/>
 					</object>
 					<int key="connectionID">70</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">captureButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="740490465"/>
+					</object>
+					<int key="connectionID">155</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -371,7 +378,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">154</int>
+			<int key="maxID">155</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -390,7 +397,6 @@
 						<string key="moveTie:">UIPanGestureRecognizer</string>
 						<string key="rotate:">UIRotationGestureRecognizer</string>
 						<string key="scaleTie:">UIPinchGestureRecognizer</string>
-						<string key="swipe:">UISwipeGestureRecognizer</string>
 						<string key="takeSnapshot:">UIButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
@@ -406,20 +412,21 @@
 							<string key="name">scaleTie:</string>
 							<string key="candidateClassName">UIPinchGestureRecognizer</string>
 						</object>
-						<object class="IBActionInfo" key="swipe:">
-							<string key="name">swipe:</string>
-							<string key="candidateClassName">UISwipeGestureRecognizer</string>
-						</object>
 						<object class="IBActionInfo" key="takeSnapshot:">
 							<string key="name">takeSnapshot:</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="captureButton">UIButton</string>
 						<string key="tieImageView">UIImageView</string>
 						<string key="tieIndicator">UIPageControl</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="captureButton">
+							<string key="name">captureButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="tieImageView">
 							<string key="name">tieImageView</string>
 							<string key="candidateClassName">UIImageView</string>

@@ -28,10 +28,33 @@
 @property UIImageView *screenView;
 @property UIImageView *rightView;
 
+// Anyone want to know when things change?
+@property (nonatomic) NSMutableArray *delegates;
+
 @end
 
 
 @implementation TRScrollingTieRackView
+
+// Lazy instantiation that gives us space for one something.
+- (NSMutableArray *) delegates {
+    if (!_delegates) _delegates = [[NSMutableArray alloc] initWithCapacity:1];
+    return _delegates;
+}
+
+// Nope sorry - you can't remove these.  No takebacks.
+- (void) addDelegate:(id<TRScrollingTieRackViewDelegate>)delegate {
+    [self.delegates addObject:delegate];
+}
+
+// Dispatches a message to all delegates that can understand it.
+- (void) tellDelegatesTieWillChange {
+    for (id<TRScrollingTieRackViewDelegate> delegate in self.delegates) {
+        if ([delegate respondsToSelector:@selector(tieWillChange)]) {
+            [delegate tieWillChange];
+        }
+    }
+}
 
 - (id)initWithFrame:(CGRect)frame andTieList:(TRTiesListModel*)rack
 {
@@ -41,6 +64,7 @@
         self.rack = rack;
         self.waitingToShowLeft  = NO;
         self.waitingToShowRight = NO;
+        self.transform = CGAffineTransformMakeTranslation(0, 0); // No transform
         
         // Enable paging and disable scrollbars.
         self.pagingEnabled = YES;
@@ -73,6 +97,14 @@
         
     }
     return self;
+}
+
+- (void) setTransform:(CGAffineTransform)transform {
+    _transform = transform;
+    self.leftView.transform = transform;
+    self.screenView.transform = transform;
+    self.rightView.transform = transform;
+
 }
 
 - (void) addTieRight {
@@ -145,6 +177,8 @@
             self.watchingDirection = NO;
             self.waitingToShowLeft = YES;
             
+            [self tellDelegatesTieWillChange];
+            
         } else if (self.contentOffset.x > self.scrollStopXPos) {
             
             // Load the next tie image before the view stops scrolling.
@@ -152,6 +186,8 @@
             
             self.watchingDirection  = NO;
             self.waitingToShowRight = YES;
+            
+            [self tellDelegatesTieWillChange];
         }
     }
 }

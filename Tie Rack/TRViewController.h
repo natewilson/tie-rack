@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <CoreMedia/CoreMedia.h>
 #import <AVFoundation/AVFoundation.h>
+#import "TRScrollingTieRackView.h"
 
-@interface TRViewController : UIViewController
+@interface TRViewController : UIViewController <TRScrollingTieRackViewDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 @property (strong, nonatomic) AVCaptureSession *captureSession;
+
+- (void) tieWillChange;
 
 @end

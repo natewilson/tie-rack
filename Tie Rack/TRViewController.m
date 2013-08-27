@@ -10,23 +10,20 @@
 #import "TRTiesListModel.h"
 #import "TRPhotoBuilder.h"
 #import "TRScrollingTieRackView.h"
-#import <UIKit/UISwipeGestureRecognizer.h>
+#import <UIKit/UIGestureRecognizer.h>
 
 @interface TRViewController ()
+// UI element stuffs:
+@property (strong, nonatomic) IBOutlet UIButton *captureButton;
 @property (strong, nonatomic) IBOutlet UIPageControl *tieIndicator;
 @property (strong, nonatomic) IBOutlet UIImageView *tieImageView;
+// holds and manages tie imagery:
 @property (strong, nonatomic) TRTiesListModel *rack;
-@property (nonatomic) CGFloat lastTieRotation;
-@property (nonatomic) CGFloat lastTieScale;
-@property (nonatomic) CGFloat lastTieYCoord;
-@property (nonatomic) CGFloat firstTieYCoord;
+// Used for simultaneous UX:
+@property (nonatomic) TRScrollingTieRackView *scrollingRackView;
 @end
 
-// Constants for limiting tie changes:
-#define MAX_TIE_SCALE     1.6
-#define MIN_TIE_SCALE     0.6
-#define MIN_TIE_PAN     -80.0
-#define MAX_TIE_PAN      80.0
+
 
 @implementation TRViewController
 
@@ -34,61 +31,6 @@
 @synthesize captureSession;
 @synthesize previewLayer;
 
-- (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
-    NSInteger dir = [sender direction];
-    if (dir == UISwipeGestureRecognizerDirectionLeft) {
-        [self.tieImageView setImage:[self.rack nextTieImage]];
-        [self.rack moveTiesToNext];
-    } else if (dir == UISwipeGestureRecognizerDirectionRight) {
-        [self.tieImageView setImage:[self.rack previousTieImage]];
-        [self.rack moveTiesToPrevious];
-    }
-    // Update the paging indicator
-    [self.tieIndicator setCurrentPage:[self.rack currentTieIndex]];
-    NSLog(@"Swiped:%d",dir);
-}
-- (IBAction)rotate:(UIRotationGestureRecognizer *)sender {
-    if (sender.state == UIGestureRecognizerStateBegan)
-        sender.rotation = self.lastTieRotation;
-    else if (sender.state == UIGestureRecognizerStateEnded)
-        self.lastTieRotation = sender.rotation;
-    self.tieImageView.transform = CGAffineTransformConcat(
-            CGAffineTransformMakeRotation(sender.rotation),
-            CGAffineTransformMakeScale(self.lastTieScale,self.lastTieScale)
-                                                          );
-}
-- (IBAction)scaleTie:(UIPinchGestureRecognizer *)sender {
-    CGFloat constrainedScale = [self constrainFloat: sender.scale
-                                              byMin: MIN_TIE_SCALE
-                                             andMax: MAX_TIE_SCALE];
-    if (sender.state == UIGestureRecognizerStateBegan)
-        sender.scale = self.lastTieScale;
-    else if (sender.state == UIGestureRecognizerStateEnded)
-        self.lastTieScale = constrainedScale;
-    self.tieImageView.transform = CGAffineTransformConcat(
-            CGAffineTransformMakeRotation(self.lastTieRotation),
-            CGAffineTransformMakeScale(constrainedScale, constrainedScale)
-                                                          );
-}
-// When connected to a pan gesture, this prevents swiping left/right from
-// being recognized by the swipe gestures above.
-- (IBAction)moveTie:(UIPanGestureRecognizer *)sender {
-    UIView *context = [self.tieImageView superview];
-    CGPoint constrainedCoord = [sender translationInView:context];
-    constrainedCoord.y = [self constrainFloat: constrainedCoord.y
-                                        byMin: MIN_TIE_PAN
-                                       andMax: MAX_TIE_PAN];
-    if (sender.state == UIGestureRecognizerStateBegan){
-        constrainedCoord.y = self.lastTieYCoord;
-        [sender setTranslation:constrainedCoord inView:context];
-    } else if (sender.state == UIGestureRecognizerStateEnded){
-        self.lastTieYCoord = constrainedCoord.y;
-    }
-    CGPoint newCenter;
-    newCenter.x = [self.tieImageView center].x;
-    newCenter.y = self.firstTieYCoord + constrainedCoord.y;
-    [self.tieImageView setCenter:newCenter];
-}
 - (IBAction)takeSnapshot:(UIButton *)sender {
     TRPhotoBuilder *photographer = [[TRPhotoBuilder alloc] init];
     [photographer captureImage:self withTie:[self.rack currentTieImage]];
@@ -100,14 +42,8 @@
     return _rack;
 }
 
-- (CGFloat) lastTieScale {
-    if (!_lastTieScale) _lastTieScale = 1.0;
-    return _lastTieScale;
-}
-
-- (CGFloat) firstTieYCoord {
-    if (!_firstTieYCoord) _firstTieYCoord = [self.tieImageView center].y;
-    return _firstTieYCoord;
+- (void) tieWillChange {
+    [self.tieIndicator setCurrentPage:[self.rack currentTieIndex]];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -120,27 +56,33 @@
     return self;
 }
 
+- (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer {
+    self.scrollingRackView.transform = CGAffineTransformScale(self.scrollingRackView.transform, recognizer.scale, recognizer.scale);
+    recognizer.scale = 1;
+}
+
+- (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer {
+    self.scrollingRackView.transform = CGAffineTransformRotate(self.scrollingRackView.transform, recognizer.rotation);
+    recognizer.rotation = 0;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    // Set the Initial Tie view to the currentTieImage
-    [self.tieImageView setImage:[self.rack currentTieImage]];
-    
-    // Also setup the tieIndicator
-    [self.tieIndicator setNumberOfPages:[self.rack numberOfTies]];
-    [self.tieIndicator setCurrentPage:[self.rack currentTieIndex]];
     
     //add video input
     AVCaptureDevice *videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSError *error;
     AVCaptureDeviceInput *videoIn = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice error:&error];
     
-    if (!error)
-    {
+    if (!error){
         [[self captureSession] addInput:videoIn];
     }
+    
     //add video preview layer
     [self setPreviewLayer:[[AVCaptureVideoPreviewLayer alloc] initWithSession:[self captureSession]]];
 	[[self previewLayer] setVideoGravity:AVLayerVideoGravityResizeAspectFill];
@@ -148,19 +90,30 @@
     //starting to set up the preview layer as a view
     CGRect layerRect = [[[self view] layer] bounds];
 	[[self previewLayer] setBounds:layerRect];
-	[[self previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect),
-                                                                  CGRectGetMidY(layerRect))];
-	//[[[self view] layer] addSublayer:[self previewLayer]];
+	[[self previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
     [[[self view] layer] insertSublayer:[self previewLayer] atIndex:0];
-    //[[self view] addSubview:[self previewLayer]];
     
-    // Add a scrolling rack view?
-    TRScrollingTieRackView *rackView = [[TRScrollingTieRackView alloc] initWithFrame:CGRectMake(0, 60, 320, 380) andTieList:self.rack];
-    [self.view addSubview:rackView];
+    // Add a scrolling rack view, setting "self" to receive notifications
+    self.scrollingRackView = [[TRScrollingTieRackView alloc] initWithFrame:CGRectMake(0, 0, 320, 480) andTieList:self.rack];
+    [self.scrollingRackView addDelegate:self];
+    [self.view addSubview:self.scrollingRackView];
+    
+    // Now setup a few gesture recognizers to handle the rotation and scaling of the ties
+    UIRotationGestureRecognizer *rotater = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotate:)];
+    UIPinchGestureRecognizer *pincher = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
+    rotater.delegate = self;
+    pincher.delegate = self;
+    [self.view addGestureRecognizer:rotater];
+    [self.view addGestureRecognizer:pincher];
+    
+    // Now setup the tieIndicator and bring it on top of the scrolling view along with the capture button.
+    [self.tieIndicator setNumberOfPages:[self.rack numberOfTies]];
+    [self.tieIndicator setCurrentPage:[self.rack currentTieIndex]];
+    [self.view bringSubviewToFront:self.tieIndicator];
+    [self.view bringSubviewToFront:self.captureButton];
     
     //start the capture session
     [captureSession startRunning];
-    
 }
 
 - (void)didReceiveMemoryWarning
