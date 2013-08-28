@@ -16,6 +16,7 @@
 //  right while simultaneously re-positioning the content area on the center
 //  image (the "screenView" UIImageView instance).  This creates the effect
 //  that the user has actually moved one image to the left.
+//  
 //  2.) Shared transformation:
 //  The Scrolling Tie Rack View will dispatch new transform objects to all
 //  three of the images that appear in the content area.  This way, when
@@ -116,11 +117,32 @@
 }
 
 - (void) setTransform:(CGAffineTransform)transform {
+    
+    // Set our transform WITHOUT translation:
     _transform = transform;
-    self.leftView.transform = transform;
-    self.screenView.transform = transform;
-    self.rightView.transform = transform;
+    
+    // Start with our existing transform and apply the translation last
+    CGAffineTransform composite = CGAffineTransformConcat(transform, CGAffineTransformMakeTranslation(self.translation.x, self.translation.y));
+    
+    // Finally, subviews should reflect both in their composite transforms
+    self.leftView.transform = composite;
+    self.screenView.transform = composite;
+    self.rightView.transform = composite;
 
+}
+
+- (void) setTranslation:(CGPoint)translation {
+    
+    // Set our translation WITHOUT transform(scale/rotate)
+    _translation = translation;
+    
+    // Start with our existing transform and apply the translation last
+    CGAffineTransform composite = CGAffineTransformConcat(self.transform, CGAffineTransformMakeTranslation(translation.x, translation.y));
+
+    // Finally, subviews should reflect both in their composite transforms
+    self.leftView.transform = composite;
+    self.screenView.transform = composite;
+    self.rightView.transform = composite;
 }
 
 - (void) addTieRight {

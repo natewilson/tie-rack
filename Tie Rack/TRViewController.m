@@ -68,6 +68,28 @@
     recognizer.rotation = 0;
 }
 
+
+- (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer {
+    switch (recognizer.state) {
+        case UIGestureRecognizerStateBegan:
+            self.scrollingRackView.scrollEnabled = NO;
+            [recognizer setTranslation:self.scrollingRackView.translation inView:self.view];
+            break;
+        case UIGestureRecognizerStateChanged:
+            self.scrollingRackView.translation = [recognizer translationInView:self.view];
+            break;
+        case UIGestureRecognizerStateEnded:
+            self.scrollingRackView.scrollEnabled = YES;
+            break;
+        default:
+            break;
+    }
+    
+    //CGPoint loc = [recognizer translationInView:self.scrollingRackView];
+    //self.scrollingRackView.transform = CGAffineTransformTranslate(self.scrollingRackView.transform, loc.x, loc.y);
+    //[recognizer setTranslation:CGPointMake(0, 0) inView:self.scrollingRackView];
+}
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
 }
@@ -103,10 +125,14 @@
     // Now setup a few gesture recognizers to handle the rotation and scaling of the ties
     UIRotationGestureRecognizer *rotater = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotate:)];
     UIPinchGestureRecognizer *pincher = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
+    UIPanGestureRecognizer *panner = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+    [panner setMinimumNumberOfTouches:2];
     rotater.delegate = self;
     pincher.delegate = self;
+    panner.delegate  = self;
     [self.view addGestureRecognizer:rotater];
     [self.view addGestureRecognizer:pincher];
+    [self.view addGestureRecognizer:panner];
     
     // Now setup the tieIndicator and bring it on top of the scrolling view along with the capture button.
     [self.tieIndicator setNumberOfPages:[self.rack numberOfTies]];

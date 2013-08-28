@@ -32,8 +32,6 @@
 		CFC8038D174C0FE0006B492F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFC8038B174C0FE0006B492F /* InfoPlist.strings */; };
 		CFC8038F174C0FE0006B492F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC8038E174C0FE0006B492F /* main.m */; };
 		CFC80393174C0FE0006B492F /* TRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC80392174C0FE0006B492F /* TRAppDelegate.m */; };
-		CFC80395174C0FE0006B492F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CFC80394174C0FE0006B492F /* Default.png */; };
-		CFC80397174C0FE0006B492F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFC80396174C0FE0006B492F /* Default@2x.png */; };
 		CFC80399174C0FE0006B492F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFC80398174C0FE0006B492F /* Default-568h@2x.png */; };
 		CFF5A4F717B19AB000F3D8D0 /* TieRack-57.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF5A4F617B19AB000F3D8D0 /* TieRack-57.png */; };
 		CFF5A4F917B19AB400F3D8D0 /* TieRack-114.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF5A4F817B19AB400F3D8D0 /* TieRack-114.png */; };
@@ -78,8 +76,6 @@
 		CFC80390174C0FE0006B492F /* Tie Rack-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tie Rack-Prefix.pch"; sourceTree = "<group>"; };
 		CFC80391174C0FE0006B492F /* TRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRAppDelegate.h; sourceTree = "<group>"; };
 		CFC80392174C0FE0006B492F /* TRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TRAppDelegate.m; sourceTree = "<group>"; };
-		CFC80394174C0FE0006B492F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		CFC80396174C0FE0006B492F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CFC80398174C0FE0006B492F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CFF5A4F617B19AB000F3D8D0 /* TieRack-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TieRack-57.png"; sourceTree = "<group>"; };
 		CFF5A4F817B19AB400F3D8D0 /* TieRack-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TieRack-114.png"; sourceTree = "<group>"; };
@@ -191,8 +187,6 @@
 				CFC8038B174C0FE0006B492F /* InfoPlist.strings */,
 				CFC8038E174C0FE0006B492F /* main.m */,
 				CFC80390174C0FE0006B492F /* Tie Rack-Prefix.pch */,
-				CFC80394174C0FE0006B492F /* Default.png */,
-				CFC80396174C0FE0006B492F /* Default@2x.png */,
 				CFC80398174C0FE0006B492F /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
@@ -251,8 +245,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFC8038D174C0FE0006B492F /* InfoPlist.strings in Resources */,
-				CFC80395174C0FE0006B492F /* Default.png in Resources */,
-				CFC80397174C0FE0006B492F /* Default@2x.png in Resources */,
 				CFC80399174C0FE0006B492F /* Default-568h@2x.png in Resources */,
 				5D02B4C9174E74EB009014FD /* readme.md in Resources */,
 				F31CF30D1755110400F9B324 /* TRViewController.xib in Resources */,

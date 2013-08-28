@@ -22,6 +22,7 @@
 
 // Set for all items in the scrolling view.
 @property (nonatomic) CGAffineTransform transform;
+@property (nonatomic) CGPoint translation;
 
 // Do not init without a tiesListModel
 - (id)initWithFrame:(CGRect)frame andTieList:(TRTiesListModel*)rack;
