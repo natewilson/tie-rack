@@ -15,6 +15,8 @@
 
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 @property (strong, nonatomic) AVCaptureSession *captureSession;
+@property (strong, nonatomic) UIImagePickerController *picker;
+@property (nonatomic) NSMutableArray *capturedImages;
 
 - (void) tieWillChange;
 

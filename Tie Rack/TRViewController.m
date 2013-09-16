@@ -21,7 +21,7 @@
 @property (strong, nonatomic) TRTiesListModel *rack;
 // Used for simultaneous UX:
 @property (nonatomic) TRScrollingTieRackView *scrollingRackView;
-@property (strong, nonatomic) UIImagePickerController *picker;
+
 @end
 
 
@@ -180,5 +180,59 @@
     else if (f < min) return min;
     else return f;
 }
+
+
+// This method is called when an image has been chosen from the library or taken from the camera.
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    
+    UIImage *imageData = image;
+    
+    UIImage *base = imageData;
+    
+    // Try to make a UIImage out of what we have
+    //UIImage *base = [[UIImage alloc] initWithData:imageData];
+    
+    // Setup an image context and get a reference to it.
+    UIGraphicsBeginImageContext(base.size);
+    CGContextRef refContext = UIGraphicsGetCurrentContext();
+    
+    // Start by drawing the base image.
+    [base drawInRect:CGRectMake(0, 0, base.size.width, base.size.height)];
+    
+    // Now hold onto the state because we're about to majorly mess things up.
+    CGContextSaveGState(refContext);
+    
+    // Move the origin to the center so that we rotate and scale around this point
+    CGContextTranslateCTM(refContext, base.size.width/2, base.size.height/2);
+    
+    // After re-centering, apply the same transform that the tie had.
+    CGContextConcatCTM(refContext, self.scrollingRackView.transform);
+    
+    // Draw with an adjusted center point.
+    [[self.rack currentTieImage] drawInRect:CGRectMake(-base.size.width / 2, -base.size.height / 2,
+                               base.size.width, base.size.height)];
+    
+    // OK - restore the regular transform matrix
+    CGContextRestoreGState(refContext);
+    
+    // Add a Tie Rack brand in the lower left.
+    UIImage *branding = [UIImage imageNamed:@"TieRack-imageBrand"];
+    [branding drawInRect:CGRectMake(10, base.size.height - 10 - branding.size.height,
+                                    branding.size.width, branding.size.height)];
+    
+    // Now read it all back together.
+    UIImage *final = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSLog(@"Have image... writing to Camera Roll...");
+    UIImageWriteToSavedPhotosAlbum(final, nil, nil, nil);
+    
+    
+    
+    
+}
+
 
 @end
