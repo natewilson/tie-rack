@@ -11,7 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "TRScrollingTieRackView.h"
 
-@interface TRViewController : UIViewController <TRScrollingTieRackViewDelegate, UIGestureRecognizerDelegate>
+@interface TRViewController : UIViewController <TRScrollingTieRackViewDelegate, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 @property (strong, nonatomic) AVCaptureSession *captureSession;

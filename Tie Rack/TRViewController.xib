@@ -393,30 +393,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">TRViewController</string>
 					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="moveTie:">UIPanGestureRecognizer</string>
-						<string key="rotate:">UIRotationGestureRecognizer</string>
-						<string key="scaleTie:">UIPinchGestureRecognizer</string>
-						<string key="takeSnapshot:">UIButton</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="moveTie:">
-							<string key="name">moveTie:</string>
-							<string key="candidateClassName">UIPanGestureRecognizer</string>
-						</object>
-						<object class="IBActionInfo" key="rotate:">
-							<string key="name">rotate:</string>
-							<string key="candidateClassName">UIRotationGestureRecognizer</string>
-						</object>
-						<object class="IBActionInfo" key="scaleTie:">
-							<string key="name">scaleTie:</string>
-							<string key="candidateClassName">UIPinchGestureRecognizer</string>
-						</object>
-						<object class="IBActionInfo" key="takeSnapshot:">
-							<string key="name">takeSnapshot:</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="captureButton">UIButton</string>
 						<string key="tieImageView">UIImageView</string>

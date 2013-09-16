@@ -22,6 +22,8 @@
 }
 
 - (void) captureImage: (TRViewController *) ctrl withTie:(UIImage *)tie andTransform:(CGAffineTransform)ctm {
+
+    
     AVCaptureStillImageOutput *stillImageOut = [[AVCaptureStillImageOutput alloc] init];
     AVCaptureSession *session = ctrl.captureSession;
     
@@ -95,6 +97,7 @@
     } else {
         NSLog(@"Cannot add stillImageOut to captureSession.");
     }
+     
 }
 
 - (id) init {

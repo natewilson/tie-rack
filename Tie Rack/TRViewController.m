@@ -21,6 +21,7 @@
 @property (strong, nonatomic) TRTiesListModel *rack;
 // Used for simultaneous UX:
 @property (nonatomic) TRScrollingTieRackView *scrollingRackView;
+@property (strong, nonatomic) UIImagePickerController *picker;
 @end
 
 
@@ -30,6 +31,7 @@
 // Properties exposed externally
 @synthesize captureSession;
 @synthesize previewLayer;
+@synthesize picker;
 
 - (IBAction)takeSnapshot:(UIButton *)sender {
     TRPhotoBuilder *photographer = [[TRPhotoBuilder alloc] init];
@@ -53,7 +55,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [self setCaptureSession:[[AVCaptureSession alloc] init]];
+        //[self setCaptureSession:[[AVCaptureSession alloc] init]];
     }
     return self;
 }
@@ -108,18 +110,29 @@
     }
     
     //add video preview layer
-    [self setPreviewLayer:[[AVCaptureVideoPreviewLayer alloc] initWithSession:[self captureSession]]];
-	[[self previewLayer] setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+    //[self setPreviewLayer:[[AVCaptureVideoPreviewLayer alloc] initWithSession:[self captureSession]]];
+	//[[self previewLayer] setVideoGravity:AVLayerVideoGravityResizeAspectFill];
     
     //starting to set up the preview layer as a view
-    CGRect layerRect = [[[self view] layer] bounds];
-	[[self previewLayer] setBounds:layerRect];
-	[[self previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
-    [[[self view] layer] insertSublayer:[self previewLayer] atIndex:0];
+    //CGRect layerRect = [[[self view] layer] bounds];
+	//[[self previewLayer] setBounds:layerRect];
+	//[[self previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
+    //[[[self view] layer] insertSublayer:[self previewLayer] atIndex:0];
+    
+    self.picker = [[UIImagePickerController alloc] init];
+    self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    self.picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+    self.picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+    self.picker.showsCameraControls = NO;
+    self.picker.navigationBarHidden = YES;
+    self.picker.toolbarHidden = YES;
+    self.picker.wantsFullScreenLayout = YES;
+    
     
     // Add a scrolling rack view, setting "self" to receive notifications
     self.scrollingRackView = [[TRScrollingTieRackView alloc] initWithFrame:CGRectMake(0, 0, 320, 480) andTieList:self.rack];
     [self.scrollingRackView addDelegate:self];
+    
     [self.view addSubview:self.scrollingRackView];
     
     // Now setup a few gesture recognizers to handle the rotation and scaling of the ties
@@ -141,7 +154,18 @@
     [self.view bringSubviewToFront:self.captureButton];
     
     //start the capture session
-    [captureSession startRunning];
+    //[captureSession startRunning];
+    
+    //UIView *temp = self.view;
+    //self.view = self.picker.view;
+    
+    //self.picker.cameraOverlayView = self.scrollingRackView;
+    self.picker.delegate = self;
+    
+//    [[self view] addSubview: self.picker.view];
+    [[self view] insertSubview: self.picker.view atIndex:0];
+
+    [self.scrollingRackView becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning

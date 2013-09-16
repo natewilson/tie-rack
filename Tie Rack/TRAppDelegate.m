@@ -4,7 +4,9 @@
 //
 //  Created by Nate Wilson on 5/21/13.
 //  Copyright (c) 2013 iOS Study Group. All rights reserved.
-// <('o'<)
+// <('o'<) (>'o')>
+// Q('o'Q) O-('o'Q)
+// <(^_^<)
 
 #import "TRAppDelegate.h"
 #import "TRViewController.h"
