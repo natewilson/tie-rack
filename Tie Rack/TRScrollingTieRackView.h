@@ -30,5 +30,7 @@
 // Want to get notified?
 - (void) addDelegate:(id<TRScrollingTieRackViewDelegate>) delegate;
 
+// For translating
+
 @end
 

@@ -35,7 +35,8 @@
     TRPhotoBuilder *photographer = [[TRPhotoBuilder alloc] init];
     [photographer captureImage:self
                        withTie:[self.rack currentTieImage]
-                  andTransform:self.scrollingRackView.transform];
+                  andTransform:self.scrollingRackView.transform
+                andTranslation:self.scrollingRackView.translation];
 }
 
 - (TRTiesListModel *) rack {
@@ -142,6 +143,11 @@
     
     //start the capture session
     [captureSession startRunning];
+}
+
+- (CGSize) getVideoPreviewLayerSize
+{
+    return [self.previewLayer bounds].size;
 }
 
 - (void)didReceiveMemoryWarning

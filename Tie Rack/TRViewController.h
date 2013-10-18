@@ -17,5 +17,6 @@
 @property (strong, nonatomic) AVCaptureSession *captureSession;
 
 - (void) tieWillChange;
+- (CGSize) getVideoPreviewLayerSize;
 
 @end
