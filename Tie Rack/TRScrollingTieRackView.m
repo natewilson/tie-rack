@@ -53,6 +53,8 @@
 
 @implementation TRScrollingTieRackView
 
+@synthesize transform=_transform;
+
 // Lazy instantiation that gives us space for one something.
 - (NSMutableArray *) delegates {
     if (!_delegates) _delegates = [[NSMutableArray alloc] initWithCapacity:1];
