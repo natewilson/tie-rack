@@ -197,6 +197,8 @@
 // any offset changes
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
+    //NSLog(@"scrollViewDidScroll");
+    
     // Only run this when we're looking for position changes AND they're happening.
     if (self.watchingDirection && self.contentOffset.x != self.scrollStopXPos) {
         
@@ -210,24 +212,28 @@
         
         // At this point we know we need to load something.  Just figure out which.
         if (self.contentOffset.x < self.scrollStopXPos) {
-            
+
+            // NOTE: Moved scrollViewDidEndDecelerating to bind tie-load operation with UI update
             // Load the previous tie image before the view stops scrolling.
-            [self.rack moveTiesToPrevious];
+            //[self.rack moveTiesToPrevious];
             
             self.watchingDirection = NO;
             self.waitingToShowLeft = YES;
             
-            [self tellDelegatesTieWillChange];
+            // NOTE: Moved scrollViewDidEndDecelerating to bind tie-load operation with UI update
+            //[self tellDelegatesTieWillChange];
             
         } else if (self.contentOffset.x > self.scrollStopXPos) {
             
+            // NOTE: Moved scrollViewDidEndDecelerating to bind tie-load operation with UI update
             // Load the next tie image before the view stops scrolling.
-            [self.rack moveTiesToNext];
+            //[self.rack moveTiesToNext];
             
             self.watchingDirection  = NO;
             self.waitingToShowRight = YES;
             
-            [self tellDelegatesTieWillChange];
+            // NOTE: Moved scrollViewDidEndDecelerating to bind tie-load operation with UI update
+            //[self tellDelegatesTieWillChange];
         }
     }
 }
@@ -235,6 +241,9 @@
 
 // called on start of dragging (may require some time and or distance to move)
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    
+    NSLog(@"scrollViewWillBeginDragging");
+    
     // When a drag begins, save the x-coordinate in order to determine
     // whether we end up to the left or right when the drag stops.
     self.lastShownXPos = self.contentOffset.x;
@@ -242,6 +251,9 @@
 
 // called on finger up if the user dragged. decelerate is true if it will continue moving afterwards
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    
+    if (self.watchingDirection)
+        NSLog(@"ERROR");
     
     // Make a note of where the scroll stopped (to gauge direction of deceleration)
     self.scrollStopXPos = self.contentOffset.x;
@@ -256,12 +268,16 @@
     
     // for either the right...
     if (self.waitingToShowRight) {
+        [self.rack moveTiesToNext];
         [self addTieRight];
+        [self tellDelegatesTieWillChange];
         self.waitingToShowRight = NO;
     }
     // ...or left ties appropriately
     if (self.waitingToShowLeft) {
+        [self.rack moveTiesToPrevious];
         [self addTieLeft];
+        [self tellDelegatesTieWillChange];
         self.waitingToShowLeft = NO;
     }
 }
