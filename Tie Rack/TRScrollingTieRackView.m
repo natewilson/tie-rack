@@ -242,7 +242,7 @@
 // called on start of dragging (may require some time and or distance to move)
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     
-    NSLog(@"scrollViewWillBeginDragging");
+    //NSLog(@"scrollViewWillBeginDragging");
     
     // When a drag begins, save the x-coordinate in order to determine
     // whether we end up to the left or right when the drag stops.

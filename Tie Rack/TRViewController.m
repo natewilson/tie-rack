@@ -119,7 +119,7 @@
     [[[self view] layer] insertSublayer:[self previewLayer] atIndex:0];
     
     // Add a scrolling rack view, setting "self" to receive notifications
-    self.scrollingRackView = [[TRScrollingTieRackView alloc] initWithFrame:CGRectMake(0, 0, 320, 480) andTieList:self.rack];
+    self.scrollingRackView = [[TRScrollingTieRackView alloc] initWithFrame:[self.view frame] andTieList:self.rack];
     [self.scrollingRackView addDelegate:self];
     [self.view addSubview:self.scrollingRackView];
     
