@@ -51,11 +51,14 @@
                                   @"fruitypepples",
                                   @"leadercast",
                                   @"leadercast-grey",
+                                  @"icon-blue",
                                   @"icon-green",
                                   @"icon-yellow",
+                                  @"icon-red",
                                   @"orange",
                                   @"usa",
-                                  @"college-kickoff"
+                                  @"college-kickoff",
+                                  @"cows-with-signs"
                                   ];
     return _tieNames;
 }

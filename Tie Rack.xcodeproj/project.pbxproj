@@ -12,6 +12,9 @@
 		5D02B4C9174E74EB009014FD /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5D02B4C8174E74EB009014FD /* readme.md */; };
 		CF023F0E17CAA8410088005A /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF023F0D17CAA8410088005A /* CoreVideo.framework */; };
 		CF09731E17CBD73700663ADD /* TRScrollingTieRackView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF09731D17CBD73700663ADD /* TRScrollingTieRackView.m */; };
+		CF3887711813A7E30014F3DB /* icon-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CF38876E1813A7E30014F3DB /* icon-blue.png */; };
+		CF3887721813A7E30014F3DB /* icon-red.png in Resources */ = {isa = PBXBuildFile; fileRef = CF38876F1813A7E30014F3DB /* icon-red.png */; };
+		CF3887731813A7E30014F3DB /* cows-with-signs.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3887701813A7E30014F3DB /* cows-with-signs.png */; };
 		CF4DD14017B29295007550DE /* leadercast.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4DD13E17B29295007550DE /* leadercast.png */; };
 		CF4DD14117B29295007550DE /* usa.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4DD13F17B29295007550DE /* usa.png */; };
 		CF4E76FD17CCCCA400F4D226 /* TieRack-imageBrand.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4E76FC17CCCCA400F4D226 /* TieRack-imageBrand.png */; };
@@ -49,6 +52,9 @@
 		CF023F0D17CAA8410088005A /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		CF09731C17CBD73700663ADD /* TRScrollingTieRackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRScrollingTieRackView.h; sourceTree = "<group>"; };
 		CF09731D17CBD73700663ADD /* TRScrollingTieRackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRScrollingTieRackView.m; sourceTree = "<group>"; };
+		CF38876E1813A7E30014F3DB /* icon-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-blue.png"; path = "ties/icon-blue.png"; sourceTree = "<group>"; };
+		CF38876F1813A7E30014F3DB /* icon-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-red.png"; path = "ties/icon-red.png"; sourceTree = "<group>"; };
+		CF3887701813A7E30014F3DB /* cows-with-signs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cows-with-signs.png"; path = "ties/cows-with-signs.png"; sourceTree = "<group>"; };
 		CF4DD13E17B29295007550DE /* leadercast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leadercast.png; path = ties/leadercast.png; sourceTree = "<group>"; };
 		CF4DD13F17B29295007550DE /* usa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = usa.png; path = ties/usa.png; sourceTree = "<group>"; };
 		CF4E76FC17CCCCA400F4D226 /* TieRack-imageBrand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TieRack-imageBrand.png"; path = "img/TieRack-imageBrand.png"; sourceTree = "<group>"; };
@@ -107,6 +113,9 @@
 		CF4DD13D17B29262007550DE /* ties */ = {
 			isa = PBXGroup;
 			children = (
+				CF38876E1813A7E30014F3DB /* icon-blue.png */,
+				CF38876F1813A7E30014F3DB /* icon-red.png */,
+				CF3887701813A7E30014F3DB /* cows-with-signs.png */,
 				CF4E76FE17CD1DA200F4D226 /* leadercast-grey.png */,
 				CF4E76FF17CD1DA200F4D226 /* college-kickoff.png */,
 				CF81307417B43EEA00ABEB04 /* icon-yellow.png */,
@@ -254,10 +263,13 @@
 				CFF5A4FD17B1A17100F3D8D0 /* Default@2x.png in Resources */,
 				CFF5A4FF17B1A17E00F3D8D0 /* Default-568h@2x.png in Resources */,
 				CF4DD14017B29295007550DE /* leadercast.png in Resources */,
+				CF3887721813A7E30014F3DB /* icon-red.png in Resources */,
 				CF4DD14117B29295007550DE /* usa.png in Resources */,
 				CF81306C17B3103B00ABEB04 /* orange.png in Resources */,
+				CF3887731813A7E30014F3DB /* cows-with-signs.png in Resources */,
 				CF81307117B3F44F00ABEB04 /* icon-green.png in Resources */,
 				CF81307317B43CB900ABEB04 /* fruitypepples.png in Resources */,
+				CF3887711813A7E30014F3DB /* icon-blue.png in Resources */,
 				CF81307517B43EEA00ABEB04 /* icon-yellow.png in Resources */,
 				CF8130D217B7141E00ABEB04 /* Attribution.txt in Resources */,
 				CF8130D417B7154600ABEB04 /* camera.png in Resources */,
