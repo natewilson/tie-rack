@@ -12,6 +12,11 @@
 #import "TRScrollingTieRackView.h"
 #import <UIKit/UIGestureRecognizer.h>
 
+
+// used for KVO observation of the @"capturingStillImage" property to perform flash bulb animation
+static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCaptureStillImageIsCapturingStillImageContext";
+
+
 @interface TRViewController ()
 // UI element stuffs:
 @property (strong, nonatomic) IBOutlet UIButton *captureButton;
@@ -30,6 +35,15 @@
 // Properties exposed externally
 @synthesize captureSession;
 @synthesize previewLayer;
+
+// Internal variables
+AVCaptureStillImageOutput *stillImageOutput;
+UIView *flashView;
+
+- (AVCaptureStillImageOutput *) getImageOut {
+    return stillImageOutput;
+}
+
 
 - (IBAction)takeSnapshot:(UIButton *)sender {
     TRPhotoBuilder *photographer = [[TRPhotoBuilder alloc] init];
@@ -108,6 +122,12 @@
         [[self captureSession] addInput:videoIn];
     }
     
+    // Make a still image output  [NOTE: As of introduction on 10/19 this is NOT used for capture]
+    stillImageOutput = [AVCaptureStillImageOutput new];
+    [stillImageOutput addObserver:self forKeyPath:@"capturingStillImage" options:NSKeyValueObservingOptionNew context:(__bridge void *)(AVCaptureStillImageIsCapturingStillImageContext)];
+    if ( [[self captureSession] canAddOutput:stillImageOutput] )
+        [[self captureSession] addOutput:stillImageOutput];
+    
     //add video preview layer
     [self setPreviewLayer:[[AVCaptureVideoPreviewLayer alloc] initWithSession:[self captureSession]]];
 	[[self previewLayer] setVideoGravity:AVLayerVideoGravityResizeAspectFill];
@@ -156,11 +176,44 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+// perform a flash bulb animation using KVO to monitor the value of the capturingStillImage property of the AVCaptureStillImageOutput class
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ( context == (__bridge void *)(AVCaptureStillImageIsCapturingStillImageContext) ) {
+        BOOL isCapturingStillImage = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
+        
+        if ( isCapturingStillImage ) {
+            // do flash bulb like animation
+            flashView = [[UIView alloc] initWithFrame:[[self view] frame]];
+            [flashView setBackgroundColor:[UIColor whiteColor]];
+            [flashView setAlpha:0.f];
+            [[[self view] window] addSubview:flashView];
+            
+            [UIView animateWithDuration:.3f
+                             animations:^{ [flashView setAlpha:1.f]; }
+             ];
+        }
+        else {
+            [UIView animateWithDuration:.3f
+                             animations:^{ [flashView setAlpha:0.f]; }
+                             completion:^(BOOL finished){ [flashView removeFromSuperview]; }
+             ];
+        }
+    }
+}
+
+
+
 // Utility methods
 - (CGFloat) constrainFloat: (CGFloat) f byMin: (CGFloat) min andMax: (CGFloat) max {
     if (f > max) return max;
     else if (f < min) return min;
     else return f;
+}
+
+- (void) logPhotoSaveCompleted {
+    NSLog(@"Photo Saved");
 }
 
 @end

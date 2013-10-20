@@ -18,5 +18,9 @@
 
 - (void) tieWillChange;
 - (CGSize) getVideoPreviewLayerSize;
+- (AVCaptureStillImageOutput *) getImageOut;
+
+
+- (void) logPhotoSaveCompleted;
 
 @end
