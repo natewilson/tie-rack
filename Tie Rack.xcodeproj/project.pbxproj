@@ -35,12 +35,12 @@
 		CFC8038D174C0FE0006B492F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFC8038B174C0FE0006B492F /* InfoPlist.strings */; };
 		CFC8038F174C0FE0006B492F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC8038E174C0FE0006B492F /* main.m */; };
 		CFC80393174C0FE0006B492F /* TRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC80392174C0FE0006B492F /* TRAppDelegate.m */; };
-		CFC80399174C0FE0006B492F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFC80398174C0FE0006B492F /* Default-568h@2x.png */; };
+		CFF45AE11815B18E009C0D8C /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF45ADD1815B18E009C0D8C /* Default~iphone.png */; };
+		CFF45AE21815B18E009C0D8C /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF45ADE1815B18E009C0D8C /* Default@2x~iphone.png */; };
+		CFF45AE31815B18E009C0D8C /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF45ADF1815B18E009C0D8C /* Default-568h@2x~iphone.png */; };
+		CFF45AE41815B18E009C0D8C /* DefaultFullFade-568h@2x.xcf in Resources */ = {isa = PBXBuildFile; fileRef = CFF45AE01815B18E009C0D8C /* DefaultFullFade-568h@2x.xcf */; };
 		CFF5A4F717B19AB000F3D8D0 /* TieRack-57.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF5A4F617B19AB000F3D8D0 /* TieRack-57.png */; };
 		CFF5A4F917B19AB400F3D8D0 /* TieRack-114.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF5A4F817B19AB400F3D8D0 /* TieRack-114.png */; };
-		CFF5A4FB17B1A16E00F3D8D0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF5A4FA17B1A16E00F3D8D0 /* Default.png */; };
-		CFF5A4FD17B1A17100F3D8D0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF5A4FC17B1A17100F3D8D0 /* Default@2x.png */; };
-		CFF5A4FF17B1A17E00F3D8D0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF5A4FE17B1A17E00F3D8D0 /* Default-568h@2x.png */; };
 		F31CF30C1755110400F9B324 /* TRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F31CF30A1755110400F9B324 /* TRViewController.m */; };
 		F31CF30D1755110400F9B324 /* TRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F31CF30B1755110400F9B324 /* TRViewController.xib */; };
 /* End PBXBuildFile section */
@@ -82,12 +82,12 @@
 		CFC80390174C0FE0006B492F /* Tie Rack-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tie Rack-Prefix.pch"; sourceTree = "<group>"; };
 		CFC80391174C0FE0006B492F /* TRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRAppDelegate.h; sourceTree = "<group>"; };
 		CFC80392174C0FE0006B492F /* TRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TRAppDelegate.m; sourceTree = "<group>"; };
-		CFC80398174C0FE0006B492F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CFF45ADD1815B18E009C0D8C /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
+		CFF45ADE1815B18E009C0D8C /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
+		CFF45ADF1815B18E009C0D8C /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
+		CFF45AE01815B18E009C0D8C /* DefaultFullFade-568h@2x.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DefaultFullFade-568h@2x.xcf"; sourceTree = "<group>"; };
 		CFF5A4F617B19AB000F3D8D0 /* TieRack-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TieRack-57.png"; sourceTree = "<group>"; };
 		CFF5A4F817B19AB400F3D8D0 /* TieRack-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TieRack-114.png"; sourceTree = "<group>"; };
-		CFF5A4FA17B1A16E00F3D8D0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		CFF5A4FC17B1A17100F3D8D0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		CFF5A4FE17B1A17E00F3D8D0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F31CF3091755110400F9B324 /* TRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRViewController.h; sourceTree = "<group>"; };
 		F31CF30A1755110400F9B324 /* TRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRViewController.m; sourceTree = "<group>"; };
 		F31CF30B1755110400F9B324 /* TRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRViewController.xib; sourceTree = "<group>"; };
@@ -131,12 +131,8 @@
 		CFC80376174C0FE0006B492F = {
 			isa = PBXGroup;
 			children = (
+				CFF45AE51815B1A1009C0D8C /* Package Assets */,
 				CF023F0D17CAA8410088005A /* CoreVideo.framework */,
-				CFF5A4FE17B1A17E00F3D8D0 /* Default-568h@2x.png */,
-				CFF5A4FC17B1A17100F3D8D0 /* Default@2x.png */,
-				CFF5A4FA17B1A16E00F3D8D0 /* Default.png */,
-				CFF5A4F817B19AB400F3D8D0 /* TieRack-114.png */,
-				CFF5A4F617B19AB000F3D8D0 /* TieRack-57.png */,
 				CFC80388174C0FE0006B492F /* Tie Rack */,
 				CFC80381174C0FE0006B492F /* Frameworks */,
 				CFC80380174C0FE0006B492F /* Products */,
@@ -196,9 +192,21 @@
 				CFC8038B174C0FE0006B492F /* InfoPlist.strings */,
 				CFC8038E174C0FE0006B492F /* main.m */,
 				CFC80390174C0FE0006B492F /* Tie Rack-Prefix.pch */,
-				CFC80398174C0FE0006B492F /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFF45AE51815B1A1009C0D8C /* Package Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CFF45ADD1815B18E009C0D8C /* Default~iphone.png */,
+				CFF45ADE1815B18E009C0D8C /* Default@2x~iphone.png */,
+				CFF45ADF1815B18E009C0D8C /* Default-568h@2x~iphone.png */,
+				CFF45AE01815B18E009C0D8C /* DefaultFullFade-568h@2x.xcf */,
+				CFF5A4F817B19AB400F3D8D0 /* TieRack-114.png */,
+				CFF5A4F617B19AB000F3D8D0 /* TieRack-57.png */,
+			);
+			name = "Package Assets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,14 +262,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFC8038D174C0FE0006B492F /* InfoPlist.strings in Resources */,
-				CFC80399174C0FE0006B492F /* Default-568h@2x.png in Resources */,
 				5D02B4C9174E74EB009014FD /* readme.md in Resources */,
 				F31CF30D1755110400F9B324 /* TRViewController.xib in Resources */,
+				CFF45AE11815B18E009C0D8C /* Default~iphone.png in Resources */,
 				CFF5A4F717B19AB000F3D8D0 /* TieRack-57.png in Resources */,
 				CFF5A4F917B19AB400F3D8D0 /* TieRack-114.png in Resources */,
-				CFF5A4FB17B1A16E00F3D8D0 /* Default.png in Resources */,
-				CFF5A4FD17B1A17100F3D8D0 /* Default@2x.png in Resources */,
-				CFF5A4FF17B1A17E00F3D8D0 /* Default-568h@2x.png in Resources */,
+				CFF45AE31815B18E009C0D8C /* Default-568h@2x~iphone.png in Resources */,
+				CFF45AE21815B18E009C0D8C /* Default@2x~iphone.png in Resources */,
 				CF4DD14017B29295007550DE /* leadercast.png in Resources */,
 				CF3887721813A7E30014F3DB /* icon-red.png in Resources */,
 				CF4DD14117B29295007550DE /* usa.png in Resources */,
@@ -272,6 +279,7 @@
 				CF3887711813A7E30014F3DB /* icon-blue.png in Resources */,
 				CF81307517B43EEA00ABEB04 /* icon-yellow.png in Resources */,
 				CF8130D217B7141E00ABEB04 /* Attribution.txt in Resources */,
+				CFF45AE41815B18E009C0D8C /* DefaultFullFade-568h@2x.xcf in Resources */,
 				CF8130D417B7154600ABEB04 /* camera.png in Resources */,
 				CF4E76FD17CCCCA400F4D226 /* TieRack-imageBrand.png in Resources */,
 				CF4E770017CD1DA200F4D226 /* leadercast-grey.png in Resources */,
