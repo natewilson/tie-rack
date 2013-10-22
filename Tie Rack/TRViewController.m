@@ -39,6 +39,11 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 // Internal variables
 AVCaptureStillImageOutput *stillImageOutput;
 UIView *flashView;
+TRAppDelegate *_delegate;
+
+- (void) setDelegate:(TRAppDelegate *)delegate {
+    _delegate = delegate;
+}
 
 - (AVCaptureStillImageOutput *) getImageOut {
     return stillImageOutput;
@@ -134,6 +139,7 @@ UIView *flashView;
     
     //starting to set up the preview layer as a view
     CGRect layerRect = [[[self view] layer] bounds];
+    
 	[[self previewLayer] setBounds:layerRect];
 	[[self previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
     [[[self view] layer] insertSublayer:[self previewLayer] atIndex:0];
@@ -163,6 +169,7 @@ UIView *flashView;
     
     //start the capture session
     [captureSession startRunning];
+    
 }
 
 - (CGSize) getVideoPreviewLayerSize

@@ -10,6 +10,7 @@
 #import <CoreMedia/CoreMedia.h>
 #import <AVFoundation/AVFoundation.h>
 #import "TRScrollingTieRackView.h"
+#import "TRAppDelegate.h"
 
 @interface TRViewController : UIViewController <TRScrollingTieRackViewDelegate, UIGestureRecognizerDelegate>
 
@@ -20,7 +21,7 @@
 - (CGSize) getVideoPreviewLayerSize;
 - (AVCaptureStillImageOutput *) getImageOut;
 
-
+- (void) setDelegate: (TRAppDelegate *) delegate;
 - (void) logPhotoSaveCompleted;
 
 @end
