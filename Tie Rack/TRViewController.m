@@ -74,6 +74,8 @@ TRAppDelegate *_delegate;
     if (self) {
         // Custom initialization
         [self setCaptureSession:[[AVCaptureSession alloc] init]];
+        [[self view] setFrame:[UIScreen mainScreen].bounds];
+        NSLog(@"TRView height: %f", [UIScreen mainScreen].bounds.size.height);
     }
     return self;
 }
@@ -138,9 +140,11 @@ TRAppDelegate *_delegate;
 	[[self previewLayer] setVideoGravity:AVLayerVideoGravityResizeAspectFill];
     
     //starting to set up the preview layer as a view
-    CGRect layerRect = [[[self view] layer] bounds];
+    CGRect layerRect = [[UIScreen mainScreen] bounds];
+    NSLog(@"LayerRect: %f", layerRect.size.height);
     
-	[[self previewLayer] setBounds:layerRect];
+    [[self view] setFrame:layerRect];
+	[[self previewLayer] setFrame:layerRect];
 	[[self previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
     [[[self view] layer] insertSublayer:[self previewLayer] atIndex:0];
     

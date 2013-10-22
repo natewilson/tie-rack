@@ -79,6 +79,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
         // Initialization code
         self.rack = rack;
         self.waitingToShowLeft  = NO;
