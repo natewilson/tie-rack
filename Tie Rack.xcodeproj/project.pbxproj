@@ -477,7 +477,7 @@
 		CFC8039D174C0FE0006B492F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Chick-fil-A, Inc.";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tie Rack/Tie Rack-Prefix.pch";
 				INFOPLIST_FILE = "Tie Rack/Tie Rack-Info.plist";
@@ -490,7 +490,7 @@
 		CFC8039E174C0FE0006B492F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Chick-fil-A, Inc.";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tie Rack/Tie Rack-Prefix.pch";
 				INFOPLIST_FILE = "Tie Rack/Tie Rack-Info.plist";
