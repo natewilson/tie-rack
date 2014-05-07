@@ -28,7 +28,7 @@ NSInteger swapCount;
     
     // Now setup and show the introductory "ad"
     adScreen = [[TRSplashViewController alloc] initWithDelegate:self andImageNamed:@"HowToUse"];
-    [adScreen moveImageToTop];
+    [adScreen moveImageToBottom];
     [[adScreen view] setBackgroundColor:[UIColor colorWithRed:(79./255) green:(44./255) blue:(29./255) alpha:1]];
     [adScreen setImage:@"HowToUse"];
     
@@ -76,17 +76,17 @@ NSInteger swapCount;
     // First set it to a default of nil so that we won't show it if we don't need to.
     NSString *imageName = nil;
     
-    if ([dateToday isEqualToString:@"10/31"] || swapCount % 3 == 1) {
+    if ([dateToday isEqualToString:@"10/31"]) {
         // Generic KTI reminder that can be used over and over again.  (The tie pictured is small)
         // (focus is on the Kenny profile)
         imageName = @"KTIDayAd";
         [[adScreen view] setBackgroundColor:[UIColor colorWithRed:(217./255) green:(217./255) blue:(217./255) alpha:1.0]];
         [adScreen moveImageToTop];
-    } else if ([[todayStringFormatter stringFromDate:today] isEqualToString:@"10/30/2013"] || swapCount % 3 == 2) {
+    } else if ([[todayStringFormatter stringFromDate:today] isEqualToString:@"10/30/2013"]) {
         imageName = @"KTIPreviewAd";
         [[adScreen view] setBackgroundColor:[UIColor colorWithRed:(217./255) green:(217./255) blue:(217./255) alpha:1.0]];
         [adScreen moveImageToTop];
-    } else if (swapCount % 3 == 0) {
+    } else if (swapCount % 8 == 0) {
         // Every 10 times (when we're *not* showing a KTI ad)
         imageName = @"MobileITSolutionsAd";
         [[adScreen view] setBackgroundColor:[UIColor whiteColor]];

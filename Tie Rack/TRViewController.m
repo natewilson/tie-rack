@@ -168,7 +168,8 @@ TRAppDelegate *_delegate;
     // Now setup the tieIndicator and bring it on top of the scrolling view along with the capture button.
     [self.tieIndicator setNumberOfPages:[self.rack numberOfTies]];
     [self.tieIndicator setCurrentPage:[self.rack currentTieIndex]];
-    [self.view bringSubviewToFront:self.tieIndicator];
+    //[self.view bringSubviewToFront:self.tieIndicator];
+    [self.tieIndicator setHidden:YES];
     [self.view bringSubviewToFront:self.captureButton];
     
     //start the capture session

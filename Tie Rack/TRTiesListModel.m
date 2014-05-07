@@ -51,6 +51,7 @@
                                   @"fruitypepples",
                                   @"leadercast",
                                   @"leadercast-grey",
+                                  @"icon-black",
                                   @"icon-blue",
                                   @"icon-green",
                                   @"icon-yellow",
