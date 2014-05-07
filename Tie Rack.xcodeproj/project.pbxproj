@@ -28,7 +28,6 @@
 		CF47C56D1815D94200167C0E /* TRSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF47C56C1815D94200167C0E /* TRSplashViewController.m */; };
 		CF47C5731815E73100167C0E /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = CF47C56F1815E73100167C0E /* camera.png */; };
 		CF47C5741815E73100167C0E /* MobileITSolutionsAd.png in Resources */ = {isa = PBXBuildFile; fileRef = CF47C5701815E73100167C0E /* MobileITSolutionsAd.png */; };
-		CF47C5761815E73100167C0E /* TieRack-imageBrand.png in Resources */ = {isa = PBXBuildFile; fileRef = CF47C5721815E73100167C0E /* TieRack-imageBrand.png */; };
 		CF4DD14017B29295007550DE /* leadercast.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4DD13E17B29295007550DE /* leadercast.png */; };
 		CF4DD14117B29295007550DE /* usa.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4DD13F17B29295007550DE /* usa.png */; };
 		CF4E76FD17CCCCA400F4D226 /* TieRack-imageBrand.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4E76FC17CCCCA400F4D226 /* TieRack-imageBrand.png */; };
@@ -40,7 +39,6 @@
 		CF81307317B43CB900ABEB04 /* fruitypepples.png in Resources */ = {isa = PBXBuildFile; fileRef = CF81307217B43CB900ABEB04 /* fruitypepples.png */; };
 		CF81307517B43EEA00ABEB04 /* icon-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CF81307417B43EEA00ABEB04 /* icon-yellow.png */; };
 		CF8130D217B7141E00ABEB04 /* Attribution.txt in Resources */ = {isa = PBXBuildFile; fileRef = CF8130D117B7141E00ABEB04 /* Attribution.txt */; };
-		CF8130D417B7154600ABEB04 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8130D317B7154600ABEB04 /* camera.png */; };
 		CF8130DA17B7507A00ABEB04 /* TRPhotoBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8130D917B7507A00ABEB04 /* TRPhotoBuilder.m */; };
 		CF8130E017B8149900ABEB04 /* TRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8130DF17B8149800ABEB04 /* TRHomeViewController.m */; };
 		CFC80383174C0FE0006B492F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC80382174C0FE0006B492F /* UIKit.framework */; };
@@ -311,7 +309,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = TR;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "iOS Study Group";
 				TargetAttributes = {
 					CFC8037E174C0FE0006B492F = {
@@ -371,12 +369,10 @@
 				CF8130D217B7141E00ABEB04 /* Attribution.txt in Resources */,
 				CF47C5731815E73100167C0E /* camera.png in Resources */,
 				CF47C5611815CFC800167C0E /* Icon.png in Resources */,
-				CF8130D417B7154600ABEB04 /* camera.png in Resources */,
 				CF47C5631815CFC800167C0E /* iTunesArtwork in Resources */,
 				CF4E76FD17CCCCA400F4D226 /* TieRack-imageBrand.png in Resources */,
 				CF4E770017CD1DA200F4D226 /* leadercast-grey.png in Resources */,
 				CF47C5681815D07700167C0E /* Icon-80.png in Resources */,
-				CF47C5761815E73100167C0E /* TieRack-imageBrand.png in Resources */,
 				CF47C5641815CFC800167C0E /* iTunesArtwork@2x in Resources */,
 				CFC86BB31816298C00584E29 /* KTIDayAd@2x.png in Resources */,
 				CF47C5601815CFC800167C0E /* Icon-Small@2x.png in Resources */,
@@ -444,6 +440,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "5ED3E7C8-00CA-4F36-BE69-3D7AE4CCE739";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -461,7 +458,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -469,6 +467,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "5ED3E7C8-00CA-4F36-BE69-3D7AE4CCE739";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
