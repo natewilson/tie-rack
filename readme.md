@@ -1,10 +1,9 @@
-This is a test of the readme file.
+![App Icon](TieRack-57.png)
+### Tie Rack
+Tie Rack is a "just for fun" app to learn iOS programming.
 
-Tutorial pattern to follow:
-http://www.musicalgeometry.com/?p=1273
-
-Contributors:
-David Hartley
-Rene Candelier
-Brian Chambers
-Nate Wilson
+### Contributors:
+* David Hartley
+* Rene Candelier
+* Brian Chambers
+* Nate Wilson
