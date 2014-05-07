@@ -5,7 +5,6 @@
 //  Created by Nate Wilson on 8/8/13.
 //  Copyright (c) 2013 iOS Study Group. All rights reserved.
 //
-// Edited line for no change - Nate
 
 #import "TRTiesListModel.h"
 
