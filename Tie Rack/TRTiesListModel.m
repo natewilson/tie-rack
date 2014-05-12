@@ -42,7 +42,7 @@
 
 // Utility method to loop array indices to safe values
 - (int) safeIndex: (int) index for: (NSArray *)array{
-    return (index + [array count]) % [array count];
+    return (int)(index + [array count]) % (int)[array count];
 }
 
 // Accessor methods
@@ -64,7 +64,7 @@
     return _tieNames;
 }
 - (int) numberOfTies {
-    return [self.tieNames count];
+    return (int)[self.tieNames count];
 }
 - (int) currentTieIndex {
     if (!_currentTieIndex) _currentTieIndex = 0;
